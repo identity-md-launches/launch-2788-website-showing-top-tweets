@@ -1,0 +1,1412 @@
+{
+  "description": "Original-export reproductions and final-export rechecks, not a claim about all X posts. Before records intentionally retain the original defective state.",
+  "sourceCountsCapturedAt": "2026-10-31T18:07:41.574286+00:00",
+  "dataVerification": [
+    {
+      "engine": "chromium",
+      "postBodiesMatchedPublicPageCapture": 13,
+      "countsMatchedPublicPageCapture": 13
+    },
+    {
+      "engine": "webkit",
+      "postBodiesMatchedPublicPageCapture": 13,
+      "countsMatchedPublicPageCapture": 13
+    }
+  ],
+  "sourceChecks": [
+    {
+      "id": "2102050129440133156",
+      "url": "https://x.com/surfcoderepeat/status/2102050129440133156",
+      "httpStatus": 200,
+      "included": true,
+      "quotedPost": null,
+      "likes": 243,
+      "reposts": 37,
+      "replies": 23,
+      "normalizedPublicTextSha256": "2a41b77e66acc7095e91308f82090ccc1c707ebd1b486d296cf59dc0a57a61a6"
+    },
+    {
+      "id": "2102824959827742916",
+      "url": "https://x.com/AnthropicAI/status/2102824959827742916",
+      "httpStatus": 200,
+      "included": false,
+      "quotedPost": null,
+      "likes": 40801,
+      "reposts": 5289,
+      "replies": 1556,
+      "normalizedPublicTextSha256": "3b4d541bc00f34a4df7cddd34fca6f7633eded4bb937ce6d4d5b2defcb275302"
+    },
+    {
+      "id": "2103142412000600159",
+      "url": "https://x.com/AdamOnFinance/status/2103142412000600159",
+      "httpStatus": 200,
+      "included": true,
+      "quotedPost": "2102050129440133156",
+      "likes": 239,
+      "reposts": 35,
+      "replies": 23,
+      "normalizedPublicTextSha256": "2256fdba7c44e5f5f4c03e24aef85729440ecd16372ef14ca92d3a5735aefafb"
+    },
+    {
+      "id": "2107939454396567581",
+      "url": "https://x.com/surfcoderepeat/status/2107939454396567581",
+      "httpStatus": 200,
+      "included": true,
+      "quotedPost": null,
+      "likes": 400,
+      "reposts": 93,
+      "replies": 35,
+      "normalizedPublicTextSha256": "8262acaab6c88652d3f120daaa674860457bb204b45f90e0d7c47967750e3ff2"
+    },
+    {
+      "id": "2108690626627703281",
+      "url": "https://x.com/damian_et/status/2108690626627703281",
+      "httpStatus": 200,
+      "included": true,
+      "quotedPost": "2102824959827742916",
+      "likes": 74,
+      "reposts": 17,
+      "replies": 6,
+      "normalizedPublicTextSha256": "0da599eee5eabb6d43f1126809a3d8f7b1590aca23fbcd790d1543b2f2e20623"
+    },
+    {
+      "id": "2109336654259642456",
+      "url": "https://x.com/damian_et/status/2109336654259642456",
+      "httpStatus": 200,
+      "included": true,
+      "quotedPost": "2103142412000600159",
+      "likes": 94,
+      "reposts": 20,
+      "replies": 13,
+      "normalizedPublicTextSha256": "69f45bc0cce468339999dde973f279c4f8b3fc8a789f29d805ccc666e3352cc0"
+    },
+    {
+      "id": "2110765083311689890",
+      "url": "https://x.com/imdradar/status/2110765083311689890",
+      "httpStatus": 200,
+      "included": true,
+      "quotedPost": null,
+      "likes": 56,
+      "reposts": 7,
+      "replies": 7,
+      "normalizedPublicTextSha256": "9082f5d72ba0ed3580e62edd0ae0c9a58887d68616479f54581d50654a50716a"
+    },
+    {
+      "id": "2111926070052036690",
+      "url": "https://x.com/taylor_/status/2111926070052036690",
+      "httpStatus": 200,
+      "included": true,
+      "quotedPost": null,
+      "likes": 153,
+      "reposts": 18,
+      "replies": 26,
+      "normalizedPublicTextSha256": "fc1fa0413720ff5a3387cafb4acf833baa8f77f4ee1061e0722185a6136e6252"
+    },
+    {
+      "id": "2114368282199224601",
+      "url": "https://x.com/imdradar/status/2114368282199224601",
+      "httpStatus": 200,
+      "included": true,
+      "quotedPost": null,
+      "likes": 24,
+      "reposts": 6,
+      "replies": 4,
+      "normalizedPublicTextSha256": "62031fd9f58925c09b061b60a3559c9d367b2cb3b138eee8b4aa1c640810d1ed"
+    },
+    {
+      "id": "2115508430186348696",
+      "url": "https://x.com/damian_et/status/2115508430186348696",
+      "httpStatus": 200,
+      "included": true,
+      "quotedPost": "2107939454396567581",
+      "likes": 61,
+      "reposts": 16,
+      "replies": 7,
+      "normalizedPublicTextSha256": "bcec6b0dbcb96d70aa1717ab2e29c3bfb2391df7be628286c1b96d342aa460a6"
+    },
+    {
+      "id": "2115509974621184454",
+      "url": "https://x.com/imdradar/status/2115509974621184454",
+      "httpStatus": 200,
+      "included": true,
+      "quotedPost": "2115508430186348696",
+      "likes": 33,
+      "reposts": 6,
+      "replies": 5,
+      "normalizedPublicTextSha256": "d60fd110765a443f6b3d6d3b44759cae67402944d2439bc2a389a0cd2e0bd610"
+    },
+    {
+      "id": "2115516924948054326",
+      "url": "https://x.com/taylor_/status/2115516924948054326",
+      "httpStatus": 200,
+      "included": true,
+      "quotedPost": "2115508430186348696",
+      "likes": 79,
+      "reposts": 13,
+      "replies": 11,
+      "normalizedPublicTextSha256": "764b857d0e7e8f36ca728e9e01af40debc15ce8c681f018cad948e82c4730756"
+    },
+    {
+      "id": "2115891735180050703",
+      "url": "https://x.com/Shitty_Future/status/2115891735180050703",
+      "httpStatus": 200,
+      "included": false,
+      "quotedPost": null,
+      "likes": 12776,
+      "reposts": 794,
+      "replies": 68,
+      "normalizedPublicTextSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "id": "2116186409522667728",
+      "url": "https://x.com/surfcoderepeat/status/2116186409522667728",
+      "httpStatus": 200,
+      "included": true,
+      "quotedPost": "2115891735180050703",
+      "likes": 51,
+      "reposts": 7,
+      "replies": 7,
+      "normalizedPublicTextSha256": "e4c3de107d9949d099379c335f230deb9fe0494c162009e982b0ca0660ac2005"
+    },
+    {
+      "id": "2116290108060275184",
+      "url": "https://x.com/taylor_/status/2116290108060275184",
+      "httpStatus": 200,
+      "included": true,
+      "quotedPost": null,
+      "likes": 76,
+      "reposts": 11,
+      "replies": 12,
+      "normalizedPublicTextSha256": "fb1d82da18e08d25aae7318cefa07991bcd941d9bb1d0816b74105c21b0595eb"
+    }
+  ],
+  "browserReproductions": [
+    {
+      "engine": "chromium",
+      "browserVersion": "156.0.8078.4",
+      "phase": "before",
+      "widths": [
+        {
+          "width": 390,
+          "scrollWidth": 390,
+          "background": "rgb(11, 19, 14)",
+          "art": {
+            "opacity": "0.6",
+            "clip": "inset(0px 24px 0px 0px)",
+            "rect": {
+              "x": 170.40625,
+              "y": 167.75,
+              "width": 243.59375,
+              "height": 141.4375,
+              "top": 167.75,
+              "right": 414,
+              "bottom": 309.1875,
+              "left": 170.40625
+            }
+          },
+          "mask": "\"\"",
+          "rank": {
+            "display": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          },
+          "project": {
+            "display": "none",
+            "linkRect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          },
+          "peopleVisible": 0,
+          "select": {
+            "appearance": "auto",
+            "height": 46,
+            "background": "rgb(16, 27, 19)",
+            "labelY": 388.1875
+          },
+          "search": {
+            "height": 48,
+            "labelY": 386.1875,
+            "placeholder": "People, topics, or keywords…",
+            "placeholderWidth": 206,
+            "availableTextWidth": 145
+          },
+          "lineBreaks": "normal",
+          "heroDescription": "Top tweets from the IdentityMD ecosystem.",
+          "countLabel": "Snapshot",
+          "ownVoiceLines": [
+            "✳ Armed with AI. Fueled by the swarm.",
+            "Big ideas. Very green energy.",
+            "A good place to be green.Independent. Community-made.About this feed"
+          ]
+        },
+        {
+          "width": 320,
+          "scrollWidth": 320,
+          "background": "rgb(11, 19, 14)",
+          "art": {
+            "opacity": "0.5",
+            "clip": "inset(0px 24px 0px 0px)",
+            "rect": {
+              "x": 137.78125,
+              "y": 181.328125,
+              "width": 220.21875,
+              "height": 127.859375,
+              "top": 181.328125,
+              "right": 358,
+              "bottom": 309.1875,
+              "left": 137.78125
+            }
+          },
+          "mask": "\"\"",
+          "rank": {
+            "display": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          },
+          "project": {
+            "display": "none",
+            "linkRect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          },
+          "peopleVisible": 0,
+          "select": {
+            "appearance": "auto",
+            "height": 46,
+            "background": "rgb(16, 27, 19)",
+            "labelY": 388.1875
+          },
+          "search": {
+            "height": 48,
+            "labelY": 386.1875,
+            "placeholder": "People, topics, or keywords…",
+            "placeholderWidth": 206,
+            "availableTextWidth": 93
+          },
+          "lineBreaks": "normal",
+          "heroDescription": "Top tweets from the IdentityMD ecosystem.",
+          "countLabel": "Snapshot",
+          "ownVoiceLines": [
+            "✳ Armed with AI. Fueled by the swarm.",
+            "Big ideas. Very green energy.",
+            "A good place to be green.Independent. Community-made.About this feed"
+          ]
+        },
+        {
+          "width": 768,
+          "scrollWidth": 768,
+          "background": "rgb(11, 19, 14)",
+          "art": {
+            "opacity": "1",
+            "clip": "none",
+            "rect": {
+              "x": 345.84375,
+              "y": 189.59375,
+              "width": 407.15625,
+              "height": 236.40625,
+              "top": 189.59375,
+              "right": 753,
+              "bottom": 426,
+              "left": 345.84375
+            }
+          },
+          "mask": "none",
+          "rank": {
+            "display": "block",
+            "rect": {
+              "x": 645,
+              "y": 701.796875,
+              "width": 28,
+              "height": 20.796875,
+              "top": 701.796875,
+              "right": 673,
+              "bottom": 722.59375,
+              "left": 645
+            }
+          },
+          "project": {
+            "display": "none",
+            "linkRect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          },
+          "peopleVisible": 0,
+          "select": {
+            "appearance": "auto",
+            "height": 46,
+            "background": "rgb(16, 27, 19)",
+            "labelY": 519
+          },
+          "search": {
+            "height": 46,
+            "labelY": 519,
+            "placeholder": "People, topics, or keywords…",
+            "placeholderWidth": 183,
+            "availableTextWidth": 460
+          },
+          "lineBreaks": "pre-line",
+          "heroDescription": "Top tweets from the IdentityMD ecosystem.",
+          "countLabel": "Snapshot",
+          "ownVoiceLines": [
+            "✳ Armed with AI. Fueled by the swarm.",
+            "Big ideas. Very green energy.",
+            "A good place to be green.Independent. Community-made.About this feed"
+          ]
+        },
+        {
+          "width": 1440,
+          "scrollWidth": 1440,
+          "background": "rgb(11, 19, 14)",
+          "art": {
+            "opacity": "1",
+            "clip": "none",
+            "rect": {
+              "x": 721,
+              "y": 106,
+              "width": 580,
+              "height": 320,
+              "top": 106,
+              "right": 1301,
+              "bottom": 426,
+              "left": 721
+            }
+          },
+          "mask": "none",
+          "rank": {
+            "display": "block",
+            "rect": {
+              "x": 889,
+              "y": 701.796875,
+              "width": 28,
+              "height": 20.796875,
+              "top": 701.796875,
+              "right": 917,
+              "bottom": 722.59375,
+              "left": 889
+            }
+          },
+          "project": {
+            "display": "grid",
+            "linkRect": {
+              "x": 1037,
+              "y": 1396.390625,
+              "width": 162,
+              "height": 44,
+              "top": 1396.390625,
+              "right": 1199,
+              "bottom": 1440.390625,
+              "left": 1037
+            }
+          },
+          "peopleVisible": 4,
+          "select": {
+            "appearance": "auto",
+            "height": 46,
+            "background": "rgb(16, 27, 19)",
+            "labelY": 519
+          },
+          "search": {
+            "height": 46,
+            "labelY": 519,
+            "placeholder": "People, topics, or keywords…",
+            "placeholderWidth": 183,
+            "availableTextWidth": 608
+          },
+          "lineBreaks": "pre-line",
+          "heroDescription": "Top tweets from the IdentityMD ecosystem.",
+          "countLabel": "Snapshot",
+          "ownVoiceLines": [
+            "✳ Armed with AI. Fueled by the swarm.",
+            "Big ideas. Very green energy.",
+            "A good place to be green.Independent. Community-made.About this feed"
+          ]
+        }
+      ],
+      "firstArticle": "- article \"Adam on X (opens new tab)\":\n  - link \"Adam on X (opens new tab)\":\n    - /url: https://x.com/surfcoderepeat\n  - heading \"Adam on X (opens new tab)\" [level=3]:\n    - link \"Adam on X (opens new tab)\":\n      - /url: https://x.com/surfcoderepeat\n  - text: \"@surfcoderepeat\"\n  - time: Oct 7\n  - blockquote:\n    - paragraph: Introducing the first Identity MD Hackathon! Funded & organised by the community. Judged by IMD agents. …\n  - button \"Filter by Community\": Community\n  - text: \"Post excerpt Replies: 35 Reposts: 93 Likes: 400\"\n  - button \"Save post by Adam\"\n  - 'link \"View on X: post by Adam (opens new tab)\"':\n    - /url: https://x.com/surfcoderepeat/status/2107939454396567581\n    - text: View on X",
+      "hashNavigation": {
+        "before": {
+          "query": "oracle",
+          "result": "3 posts found"
+        },
+        "afterFirst": {
+          "query": "",
+          "result": "12 posts"
+        },
+        "afterSecond": {
+          "query": "oracle",
+          "result": "3 posts found"
+        }
+      },
+      "about": "A little less noise.\n\nThe Swamp brings together public posts about IdentityMD and its community of AI builders.\n\nThe collection\n12 selected posts. Collected on 31 Oct 2026. This is an independent community site.\nHow “Top tweets” works\nPosts are ranked by likes + reposts + replies in this collection. Counts are a snapshot from public X pages and may have changed. This is a selection, not an exhaustive X ranking.\nRead the original\nCards show short excerpts. “View on X” opens the complete original post. Authors’ claims belong to their authors.\nSaved means local\nBookmarks stay in this browser. There is no account, syncing, tracking, or connection to your X account.\nExplore the conversation\non X (opens new tab)",
+      "renderedTweetIds": [
+        "2107939454396567581",
+        "2102050129440133156",
+        "2111926070052036690",
+        "2109336654259642456",
+        "2115516924948054326",
+        "2108690626627703281",
+        "2116290108060275184",
+        "2115508430186348696",
+        "2110765083311689890",
+        "2116186409522667728",
+        "2115509974621184454",
+        "2114368282199224601"
+      ]
+    },
+    {
+      "engine": "chromium",
+      "browserVersion": "156.0.8078.4",
+      "phase": "after",
+      "widths": [
+        {
+          "width": 390,
+          "scrollWidth": 390,
+          "background": "rgb(15, 33, 22)",
+          "art": {
+            "opacity": "1",
+            "clip": "none",
+            "rect": {
+              "x": 181.171875,
+              "y": 213,
+              "width": 201.828125,
+              "height": 117.1875,
+              "top": 213,
+              "right": 383,
+              "bottom": 330.1875,
+              "left": 181.171875
+            }
+          },
+          "mask": "none",
+          "rank": {
+            "display": "block",
+            "rect": {
+              "x": 299,
+              "y": 575.984375,
+              "width": 28,
+              "height": 20.796875,
+              "top": 575.984375,
+              "right": 327,
+              "bottom": 596.78125,
+              "left": 299
+            }
+          },
+          "project": {
+            "display": "grid",
+            "linkRect": {
+              "x": 45,
+              "y": 4173.359375,
+              "width": 162,
+              "height": 44,
+              "top": 4173.359375,
+              "right": 207,
+              "bottom": 4217.359375,
+              "left": 45
+            }
+          },
+          "peopleVisible": 5,
+          "select": {
+            "appearance": "none",
+            "height": 48,
+            "background": "rgb(20, 41, 27)",
+            "labelY": 407.1875
+          },
+          "search": {
+            "height": 48,
+            "labelY": 407.1875,
+            "placeholder": "Keywords",
+            "placeholderWidth": 70,
+            "availableTextWidth": 135
+          },
+          "lineBreaks": "pre-line",
+          "heroDescription": "A ranked sample of tweets about IdentityMD.",
+          "countLabel": "Counted 31 Oct 2026",
+          "ownVoiceLines": [
+            "the swampAbout this feed"
+          ]
+        },
+        {
+          "width": 320,
+          "scrollWidth": 320,
+          "background": "rgb(15, 33, 22)",
+          "art": {
+            "opacity": "1",
+            "clip": "none",
+            "rect": {
+              "x": 151.125,
+              "y": 233.875,
+              "width": 165.875,
+              "height": 96.3125,
+              "top": 233.875,
+              "right": 317,
+              "bottom": 330.1875,
+              "left": 151.125
+            }
+          },
+          "mask": "none",
+          "rank": {
+            "display": "block",
+            "rect": {
+              "x": 261,
+              "y": 575.984375,
+              "width": 28,
+              "height": 20.796875,
+              "top": 575.984375,
+              "right": 289,
+              "bottom": 596.78125,
+              "left": 261
+            }
+          },
+          "project": {
+            "display": "grid",
+            "linkRect": {
+              "x": 41,
+              "y": 4540.234375,
+              "width": 162,
+              "height": 44,
+              "top": 4540.234375,
+              "right": 203,
+              "bottom": 4584.234375,
+              "left": 41
+            }
+          },
+          "peopleVisible": 5,
+          "select": {
+            "appearance": "none",
+            "height": 48,
+            "background": "rgb(20, 41, 27)",
+            "labelY": 407.1875
+          },
+          "search": {
+            "height": 48,
+            "labelY": 407.1875,
+            "placeholder": "Keywords",
+            "placeholderWidth": 70,
+            "availableTextWidth": 73
+          },
+          "lineBreaks": "pre-line",
+          "heroDescription": "A ranked sample of tweets about IdentityMD.",
+          "countLabel": "Counted 31 Oct 2026",
+          "ownVoiceLines": [
+            "the swampAbout this feed"
+          ]
+        },
+        {
+          "width": 768,
+          "scrollWidth": 768,
+          "background": "rgb(15, 33, 22)",
+          "art": {
+            "opacity": "1",
+            "clip": "none",
+            "rect": {
+              "x": 345.84375,
+              "y": 189.59375,
+              "width": 407.15625,
+              "height": 236.40625,
+              "top": 189.59375,
+              "right": 753,
+              "bottom": 426,
+              "left": 345.84375
+            }
+          },
+          "mask": "none",
+          "rank": {
+            "display": "block",
+            "rect": {
+              "x": 645,
+              "y": 701.796875,
+              "width": 28,
+              "height": 20.796875,
+              "top": 701.796875,
+              "right": 673,
+              "bottom": 722.59375,
+              "left": 645
+            }
+          },
+          "project": {
+            "display": "grid",
+            "linkRect": {
+              "x": 57,
+              "y": 4085.34375,
+              "width": 162,
+              "height": 44,
+              "top": 4085.34375,
+              "right": 219,
+              "bottom": 4129.34375,
+              "left": 57
+            }
+          },
+          "peopleVisible": 5,
+          "select": {
+            "appearance": "none",
+            "height": 46,
+            "background": "rgb(20, 41, 27)",
+            "labelY": 519
+          },
+          "search": {
+            "height": 46,
+            "labelY": 519,
+            "placeholder": "Keywords",
+            "placeholderWidth": 61,
+            "availableTextWidth": 460
+          },
+          "lineBreaks": "pre-line",
+          "heroDescription": "A ranked sample of tweets about IdentityMD.",
+          "countLabel": "Counted 31 Oct 2026",
+          "ownVoiceLines": [
+            "the swampAbout this feed"
+          ]
+        },
+        {
+          "width": 1440,
+          "scrollWidth": 1440,
+          "background": "rgb(15, 33, 22)",
+          "art": {
+            "opacity": "1",
+            "clip": "none",
+            "rect": {
+              "x": 721,
+              "y": 106,
+              "width": 580,
+              "height": 320,
+              "top": 106,
+              "right": 1301,
+              "bottom": 426,
+              "left": 721
+            }
+          },
+          "mask": "none",
+          "rank": {
+            "display": "block",
+            "rect": {
+              "x": 889,
+              "y": 701.796875,
+              "width": 28,
+              "height": 20.796875,
+              "top": 701.796875,
+              "right": 917,
+              "bottom": 722.59375,
+              "left": 889
+            }
+          },
+          "project": {
+            "display": "grid",
+            "linkRect": {
+              "x": 1037,
+              "y": 1423.59375,
+              "width": 162,
+              "height": 44,
+              "top": 1423.59375,
+              "right": 1199,
+              "bottom": 1467.59375,
+              "left": 1037
+            }
+          },
+          "peopleVisible": 5,
+          "select": {
+            "appearance": "none",
+            "height": 46,
+            "background": "rgb(20, 41, 27)",
+            "labelY": 519
+          },
+          "search": {
+            "height": 46,
+            "labelY": 519,
+            "placeholder": "Keywords",
+            "placeholderWidth": 61,
+            "availableTextWidth": 608
+          },
+          "lineBreaks": "pre-line",
+          "heroDescription": "A ranked sample of tweets about IdentityMD.",
+          "countLabel": "Counted 31 Oct 2026",
+          "ownVoiceLines": [
+            "the swampAbout this feed"
+          ]
+        }
+      ],
+      "firstArticle": "- article \"Post by Adam, Oct 7\":\n  - link \"Adam on X (opens new tab)\":\n    - /url: https://x.com/surfcoderepeat\n  - heading \"Adam on X (opens new tab)\" [level=3]:\n    - link \"Adam on X (opens new tab)\":\n      - /url: https://x.com/surfcoderepeat\n  - text: \"@surfcoderepeat\"\n  - time: Oct 7\n  - text: \"#01\"\n  - blockquote:\n    - paragraph: \"Introducing the first Identity MD Hackathon! Funded & organised by the community. Judged by IMD agents. 💰 $15,000+ in rewards 📅 Submissions: 7–21 October 🏆 Winners announced by 23 October Hire the swarm to launch on Ethereum, Robinhood or Base Criteria below 👇\"\n  - button \"Filter by Community\": Community\n  - group \"Engagement at the snapshot date\": \"Replies: 35 Reposts: 93 Likes: 400\"\n  - button \"Save post by Adam\"\n  - 'link \"View on X: post by Adam (opens new tab)\"':\n    - /url: https://x.com/surfcoderepeat/status/2107939454396567581\n    - text: View on X",
+      "hashNavigation": {
+        "before": {
+          "query": "oracle",
+          "result": "4 posts found"
+        },
+        "afterFirst": {
+          "query": "oracle",
+          "result": "4 posts found"
+        },
+        "afterSecond": {
+          "query": "oracle",
+          "result": "4 posts found"
+        }
+      },
+      "about": "A little less noise.\n\nThe Swamp brings together public posts about IdentityMD and its community of AI builders.\n\nThe collection\n13 selected posts. Collected on 31 Oct 2026.\nHow “Top tweets” works\nPosts are ranked by likes + reposts + replies in this collection. Counts are a snapshot from public X pages and may have changed. This is a selection, not an exhaustive X ranking.\nRead the original\nShort links and attached media are omitted. “View on X” opens the original post and its context. Authors’ claims belong to their authors.\nSaved means local\nBookmarks stay in this browser. There is no account, syncing, tracking, or connection to your X account.\nExplore the conversation\non X (opens new tab)",
+      "renderedTweetIds": [
+        "2107939454396567581",
+        "2102050129440133156",
+        "2103142412000600159",
+        "2111926070052036690",
+        "2109336654259642456",
+        "2115516924948054326",
+        "2116290108060275184",
+        "2108690626627703281",
+        "2115508430186348696",
+        "2110765083311689890",
+        "2116186409522667728",
+        "2115509974621184454",
+        "2114368282199224601"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "browserVersion": "27.2",
+      "phase": "before",
+      "widths": [
+        {
+          "width": 390,
+          "scrollWidth": 390,
+          "background": "rgb(11, 19, 14)",
+          "art": {
+            "opacity": "0.6",
+            "clip": "inset(0px 24px 0px 0px)",
+            "rect": {
+              "x": 170.40625,
+              "y": 167.75,
+              "width": 243.59375,
+              "height": 141.4375,
+              "top": 167.75,
+              "right": 414,
+              "bottom": 309.1875,
+              "left": 170.40625
+            }
+          },
+          "mask": "\"\"",
+          "rank": {
+            "display": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          },
+          "project": {
+            "display": "none",
+            "linkRect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          },
+          "peopleVisible": 0,
+          "select": {
+            "appearance": "auto",
+            "height": 54,
+            "background": "rgb(16, 27, 19)",
+            "labelY": 386.1875
+          },
+          "search": {
+            "height": 48,
+            "labelY": 392.1875,
+            "placeholder": "People, topics, or keywords…",
+            "placeholderWidth": 210.43994140625,
+            "availableTextWidth": 145
+          },
+          "lineBreaks": "normal",
+          "heroDescription": "Top tweets from the IdentityMD ecosystem.",
+          "countLabel": "Snapshot",
+          "ownVoiceLines": [
+            "✳ Armed with AI. Fueled by the swarm.",
+            "Big ideas. Very green energy.",
+            "A good place to be green.Independent. Community-made.About this feed"
+          ]
+        },
+        {
+          "width": 320,
+          "scrollWidth": 320,
+          "background": "rgb(11, 19, 14)",
+          "art": {
+            "opacity": "0.5",
+            "clip": "inset(0px 24px 0px 0px)",
+            "rect": {
+              "x": 137.78125,
+              "y": 181.328125,
+              "width": 220.21875,
+              "height": 127.859375,
+              "top": 181.328125,
+              "right": 358,
+              "bottom": 309.1875,
+              "left": 137.78125
+            }
+          },
+          "mask": "\"\"",
+          "rank": {
+            "display": "none",
+            "rect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          },
+          "project": {
+            "display": "none",
+            "linkRect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          },
+          "peopleVisible": 0,
+          "select": {
+            "appearance": "auto",
+            "height": 54,
+            "background": "rgb(16, 27, 19)",
+            "labelY": 386.1875
+          },
+          "search": {
+            "height": 48,
+            "labelY": 392.1875,
+            "placeholder": "People, topics, or keywords…",
+            "placeholderWidth": 210.43994140625,
+            "availableTextWidth": 93
+          },
+          "lineBreaks": "normal",
+          "heroDescription": "Top tweets from the IdentityMD ecosystem.",
+          "countLabel": "Snapshot",
+          "ownVoiceLines": [
+            "✳ Armed with AI. Fueled by the swarm.",
+            "Big ideas. Very green energy.",
+            "A good place to be green.Independent. Community-made.About this feed"
+          ]
+        },
+        {
+          "width": 768,
+          "scrollWidth": 768,
+          "background": "rgb(11, 19, 14)",
+          "art": {
+            "opacity": "1",
+            "clip": "none",
+            "rect": {
+              "x": 345.84375,
+              "y": 189.59375,
+              "width": 407.15625,
+              "height": 236.40625,
+              "top": 189.59375,
+              "right": 753,
+              "bottom": 426,
+              "left": 345.84375
+            }
+          },
+          "mask": "none",
+          "rank": {
+            "display": "block",
+            "rect": {
+              "x": 644.90625,
+              "y": 706.796875,
+              "width": 28.09375,
+              "height": 20.796875,
+              "top": 706.796875,
+              "right": 673,
+              "bottom": 727.59375,
+              "left": 644.90625
+            }
+          },
+          "project": {
+            "display": "none",
+            "linkRect": {
+              "x": 0,
+              "y": 0,
+              "width": 0,
+              "height": 0,
+              "top": 0,
+              "right": 0,
+              "bottom": 0,
+              "left": 0
+            }
+          },
+          "peopleVisible": 0,
+          "select": {
+            "appearance": "auto",
+            "height": 51,
+            "background": "rgb(16, 27, 19)",
+            "labelY": 519
+          },
+          "search": {
+            "height": 46,
+            "labelY": 524,
+            "placeholder": "People, topics, or keywords…",
+            "placeholderWidth": 184.13653564453125,
+            "availableTextWidth": 460
+          },
+          "lineBreaks": "pre-line",
+          "heroDescription": "Top tweets from the IdentityMD ecosystem.",
+          "countLabel": "Snapshot",
+          "ownVoiceLines": [
+            "✳ Armed with AI. Fueled by the swarm.",
+            "Big ideas. Very green energy.",
+            "A good place to be green.Independent. Community-made.About this feed"
+          ]
+        },
+        {
+          "width": 1440,
+          "scrollWidth": 1440,
+          "background": "rgb(11, 19, 14)",
+          "art": {
+            "opacity": "1",
+            "clip": "none",
+            "rect": {
+              "x": 721,
+              "y": 106,
+              "width": 580,
+              "height": 320,
+              "top": 106,
+              "right": 1301,
+              "bottom": 426,
+              "left": 721
+            }
+          },
+          "mask": "none",
+          "rank": {
+            "display": "block",
+            "rect": {
+              "x": 888.90625,
+              "y": 706.796875,
+              "width": 28.09375,
+              "height": 20.796875,
+              "top": 706.796875,
+              "right": 917,
+              "bottom": 727.59375,
+              "left": 888.90625
+            }
+          },
+          "project": {
+            "display": "grid",
+            "linkRect": {
+              "x": 1037,
+              "y": 1396.390625,
+              "width": 159.828125,
+              "height": 44,
+              "top": 1396.390625,
+              "right": 1196.828125,
+              "bottom": 1440.390625,
+              "left": 1037
+            }
+          },
+          "peopleVisible": 4,
+          "select": {
+            "appearance": "auto",
+            "height": 51,
+            "background": "rgb(16, 27, 19)",
+            "labelY": 519
+          },
+          "search": {
+            "height": 46,
+            "labelY": 524,
+            "placeholder": "People, topics, or keywords…",
+            "placeholderWidth": 184.13653564453125,
+            "availableTextWidth": 608
+          },
+          "lineBreaks": "pre-line",
+          "heroDescription": "Top tweets from the IdentityMD ecosystem.",
+          "countLabel": "Snapshot",
+          "ownVoiceLines": [
+            "✳ Armed with AI. Fueled by the swarm.",
+            "Big ideas. Very green energy.",
+            "A good place to be green.Independent. Community-made.About this feed"
+          ]
+        }
+      ],
+      "firstArticle": "- article \"Adam on X (opens new tab)\":\n  - link \"Adam on X (opens new tab)\":\n    - /url: https://x.com/surfcoderepeat\n  - heading \"Adam on X (opens new tab)\" [level=3]:\n    - link \"Adam on X (opens new tab)\":\n      - /url: https://x.com/surfcoderepeat\n  - text: \"@surfcoderepeat\"\n  - time: Oct 7\n  - blockquote:\n    - paragraph: Introducing the first Identity MD Hackathon! Funded & organised by the community. Judged by IMD agents. …\n  - button \"Filter by Community\": Community\n  - text: \"Post excerpt Replies: 35 Reposts: 93 Likes: 400\"\n  - button \"Save post by Adam\"\n  - 'link \"View on X: post by Adam (opens new tab)\"':\n    - /url: https://x.com/surfcoderepeat/status/2107939454396567581\n    - text: View on X",
+      "hashNavigation": {
+        "before": {
+          "query": "oracle",
+          "result": "3 posts found"
+        },
+        "afterFirst": {
+          "query": "",
+          "result": "12 posts"
+        },
+        "afterSecond": {
+          "query": "oracle",
+          "result": "3 posts found"
+        }
+      },
+      "about": "A little less noise.\n\nThe Swamp brings together public posts about IdentityMD and its community of AI builders.\n\nThe collection\n12 selected posts. Collected on 31 Oct 2026. This is an independent community site.\nHow “Top tweets” works\nPosts are ranked by likes + reposts + replies in this collection. Counts are a snapshot from public X pages and may have changed. This is a selection, not an exhaustive X ranking.\nRead the original\nCards show short excerpts. “View on X” opens the complete original post. Authors’ claims belong to their authors.\nSaved means local\nBookmarks stay in this browser. There is no account, syncing, tracking, or connection to your X account.\nExplore the conversation\non X (opens new tab)",
+      "renderedTweetIds": [
+        "2107939454396567581",
+        "2102050129440133156",
+        "2111926070052036690",
+        "2109336654259642456",
+        "2115516924948054326",
+        "2108690626627703281",
+        "2116290108060275184",
+        "2115508430186348696",
+        "2110765083311689890",
+        "2116186409522667728",
+        "2115509974621184454",
+        "2114368282199224601"
+      ]
+    },
+    {
+      "engine": "webkit",
+      "browserVersion": "27.2",
+      "phase": "after",
+      "widths": [
+        {
+          "width": 390,
+          "scrollWidth": 390,
+          "background": "rgb(15, 33, 22)",
+          "art": {
+            "opacity": "1",
+            "clip": "none",
+            "rect": {
+              "x": 181.171875,
+              "y": 213,
+              "width": 201.828125,
+              "height": 117.1875,
+              "top": 213,
+              "right": 383,
+              "bottom": 330.1875,
+              "left": 181.171875
+            }
+          },
+          "mask": "none",
+          "rank": {
+            "display": "block",
+            "rect": {
+              "x": 298.90625,
+              "y": 575.984375,
+              "width": 28.09375,
+              "height": 20.796875,
+              "top": 575.984375,
+              "right": 327,
+              "bottom": 596.78125,
+              "left": 298.90625
+            }
+          },
+          "project": {
+            "display": "grid",
+            "linkRect": {
+              "x": 45,
+              "y": 4173.359375,
+              "width": 159.828125,
+              "height": 44,
+              "top": 4173.359375,
+              "right": 204.828125,
+              "bottom": 4217.359375,
+              "left": 45
+            }
+          },
+          "peopleVisible": 5,
+          "select": {
+            "appearance": "none",
+            "height": 48,
+            "background": "rgb(20, 41, 27)",
+            "labelY": 407.1875
+          },
+          "search": {
+            "height": 48,
+            "labelY": 407.1875,
+            "placeholder": "Keywords",
+            "placeholderWidth": 71.39906311035156,
+            "availableTextWidth": 135
+          },
+          "lineBreaks": "pre-line",
+          "heroDescription": "A ranked sample of tweets about IdentityMD.",
+          "countLabel": "Counted 31 Oct 2026",
+          "ownVoiceLines": [
+            "the swampAbout this feed"
+          ]
+        },
+        {
+          "width": 320,
+          "scrollWidth": 320,
+          "background": "rgb(15, 33, 22)",
+          "art": {
+            "opacity": "1",
+            "clip": "none",
+            "rect": {
+              "x": 151.125,
+              "y": 233.875,
+              "width": 165.875,
+              "height": 96.3125,
+              "top": 233.875,
+              "right": 317,
+              "bottom": 330.1875,
+              "left": 151.125
+            }
+          },
+          "mask": "none",
+          "rank": {
+            "display": "block",
+            "rect": {
+              "x": 260.90625,
+              "y": 575.984375,
+              "width": 28.09375,
+              "height": 20.796875,
+              "top": 575.984375,
+              "right": 289,
+              "bottom": 596.78125,
+              "left": 260.90625
+            }
+          },
+          "project": {
+            "display": "grid",
+            "linkRect": {
+              "x": 41,
+              "y": 4540.234375,
+              "width": 159.828125,
+              "height": 44,
+              "top": 4540.234375,
+              "right": 200.828125,
+              "bottom": 4584.234375,
+              "left": 41
+            }
+          },
+          "peopleVisible": 5,
+          "select": {
+            "appearance": "none",
+            "height": 48,
+            "background": "rgb(20, 41, 27)",
+            "labelY": 407.1875
+          },
+          "search": {
+            "height": 48,
+            "labelY": 407.1875,
+            "placeholder": "Keywords",
+            "placeholderWidth": 71.39906311035156,
+            "availableTextWidth": 73
+          },
+          "lineBreaks": "pre-line",
+          "heroDescription": "A ranked sample of tweets about IdentityMD.",
+          "countLabel": "Counted 31 Oct 2026",
+          "ownVoiceLines": [
+            "the swampAbout this feed"
+          ]
+        },
+        {
+          "width": 768,
+          "scrollWidth": 768,
+          "background": "rgb(15, 33, 22)",
+          "art": {
+            "opacity": "1",
+            "clip": "none",
+            "rect": {
+              "x": 345.84375,
+              "y": 189.59375,
+              "width": 407.15625,
+              "height": 236.40625,
+              "top": 189.59375,
+              "right": 753,
+              "bottom": 426,
+              "left": 345.84375
+            }
+          },
+          "mask": "none",
+          "rank": {
+            "display": "block",
+            "rect": {
+              "x": 644.90625,
+              "y": 701.796875,
+              "width": 28.09375,
+              "height": 20.796875,
+              "top": 701.796875,
+              "right": 673,
+              "bottom": 722.59375,
+              "left": 644.90625
+            }
+          },
+          "project": {
+            "display": "grid",
+            "linkRect": {
+              "x": 57,
+              "y": 4085.34375,
+              "width": 159.828125,
+              "height": 44,
+              "top": 4085.34375,
+              "right": 216.828125,
+              "bottom": 4129.34375,
+              "left": 57
+            }
+          },
+          "peopleVisible": 5,
+          "select": {
+            "appearance": "none",
+            "height": 46,
+            "background": "rgb(20, 41, 27)",
+            "labelY": 519
+          },
+          "search": {
+            "height": 46,
+            "labelY": 519,
+            "placeholder": "Keywords",
+            "placeholderWidth": 62.4747314453125,
+            "availableTextWidth": 460
+          },
+          "lineBreaks": "pre-line",
+          "heroDescription": "A ranked sample of tweets about IdentityMD.",
+          "countLabel": "Counted 31 Oct 2026",
+          "ownVoiceLines": [
+            "the swampAbout this feed"
+          ]
+        },
+        {
+          "width": 1440,
+          "scrollWidth": 1440,
+          "background": "rgb(15, 33, 22)",
+          "art": {
+            "opacity": "1",
+            "clip": "none",
+            "rect": {
+              "x": 721,
+              "y": 106,
+              "width": 580,
+              "height": 320,
+              "top": 106,
+              "right": 1301,
+              "bottom": 426,
+              "left": 721
+            }
+          },
+          "mask": "none",
+          "rank": {
+            "display": "block",
+            "rect": {
+              "x": 888.90625,
+              "y": 701.796875,
+              "width": 28.09375,
+              "height": 20.796875,
+              "top": 701.796875,
+              "right": 917,
+              "bottom": 722.59375,
+              "left": 888.90625
+            }
+          },
+          "project": {
+            "display": "grid",
+            "linkRect": {
+              "x": 1037,
+              "y": 1423.59375,
+              "width": 159.828125,
+              "height": 44,
+              "top": 1423.59375,
+              "right": 1196.828125,
+              "bottom": 1467.59375,
+              "left": 1037
+            }
+          },
+          "peopleVisible": 5,
+          "select": {
+            "appearance": "none",
+            "height": 46,
+            "background": "rgb(20, 41, 27)",
+            "labelY": 519
+          },
+          "search": {
+            "height": 46,
+            "labelY": 519,
+            "placeholder": "Keywords",
+            "placeholderWidth": 62.4747314453125,
+            "availableTextWidth": 608
+          },
+          "lineBreaks": "pre-line",
+          "heroDescription": "A ranked sample of tweets about IdentityMD.",
+          "countLabel": "Counted 31 Oct 2026",
+          "ownVoiceLines": [
+            "the swampAbout this feed"
+          ]
+        }
+      ],
+      "firstArticle": "- article \"Post by Adam, Oct 7\":\n  - link \"Adam on X (opens new tab)\":\n    - /url: https://x.com/surfcoderepeat\n  - heading \"Adam on X (opens new tab)\" [level=3]:\n    - link \"Adam on X (opens new tab)\":\n      - /url: https://x.com/surfcoderepeat\n  - text: \"@surfcoderepeat\"\n  - time: Oct 7\n  - text: \"#01\"\n  - blockquote:\n    - paragraph: \"Introducing the first Identity MD Hackathon! Funded & organised by the community. Judged by IMD agents. 💰 $15,000+ in rewards 📅 Submissions: 7–21 October 🏆 Winners announced by 23 October Hire the swarm to launch on Ethereum, Robinhood or Base Criteria below 👇\"\n  - button \"Filter by Community\": Community\n  - group \"Engagement at the snapshot date\": \"Replies: 35 Reposts: 93 Likes: 400\"\n  - button \"Save post by Adam\"\n  - 'link \"View on X: post by Adam (opens new tab)\"':\n    - /url: https://x.com/surfcoderepeat/status/2107939454396567581\n    - text: View on X",
+      "hashNavigation": {
+        "before": {
+          "query": "oracle",
+          "result": "4 posts found"
+        },
+        "afterFirst": {
+          "query": "oracle",
+          "result": "4 posts found"
+        },
+        "afterSecond": {
+          "query": "oracle",
+          "result": "4 posts found"
+        }
+      },
+      "about": "A little less noise.\n\nThe Swamp brings together public posts about IdentityMD and its community of AI builders.\n\nThe collection\n13 selected posts. Collected on 31 Oct 2026.\nHow “Top tweets” works\nPosts are ranked by likes + reposts + replies in this collection. Counts are a snapshot from public X pages and may have changed. This is a selection, not an exhaustive X ranking.\nRead the original\nShort links and attached media are omitted. “View on X” opens the original post and its context. Authors’ claims belong to their authors.\nSaved means local\nBookmarks stay in this browser. There is no account, syncing, tracking, or connection to your X account.\nExplore the conversation\non X (opens new tab)",
+      "renderedTweetIds": [
+        "2107939454396567581",
+        "2102050129440133156",
+        "2103142412000600159",
+        "2111926070052036690",
+        "2109336654259642456",
+        "2115516924948054326",
+        "2116290108060275184",
+        "2108690626627703281",
+        "2115508430186348696",
+        "2110765083311689890",
+        "2116186409522667728",
+        "2115509974621184454",
+        "2114368282199224601"
+      ]
+    }
+  ],
+  "limitations": [
+    "Browser automation and accessibility snapshots are not native screen-reader or physical-device sessions.",
+    "An exhaustive X ranking requires authorized search/API data.",
+    "Short links and media are omitted from the static text; original permalinks retain full context."
+  ]
+}

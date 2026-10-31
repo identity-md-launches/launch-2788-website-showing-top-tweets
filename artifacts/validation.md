@@ -1,147 +1,93 @@
 # Validation and consolidated design review
 
-Status: **Complete for the stated scope.** This is the worker’s own validation record, not independent certification. Production assets, source, lockfile, documentation, and actual evidence are included.
+Status: **Complete for this revision's stated scope.** These are the worker's own checks, not independent certification. The accepted React/Vite structure, artwork and interaction model were retained. All 12 reviewer reports were reproduced and addressed; one answer per full finding ID is in [the revision responses](../.imd-responses.json).
 
 | Area | Final result |
 | --- | --- |
-| Brief and acceptance requirements | 9 covered, 0 missing or faked |
-| Broken primary features found in final checks | 0 |
-| Product and source action on the first screen at 390×844 | Yes, Chromium and WebKit |
-| Pinned taste@1 probe | 16/16 passed |
-| Interaction validation | 15/15 groups in each browser |
-| Automated accessibility scan | 0 violations in tested feed and dialog states, both browsers |
-| Copy findings remaining | 0 |
-| Share metadata | Title, favicon, description, og:title, og:image present; local 1200×630 PNG inspected |
+| Production build / typecheck | Passed; Vite 7.3.7, 33 modules, `tsc --noEmit` |
+| Production export | 13 files, 517,838 bytes; relative assets and metadata checked |
+| Interactions | 17/17 groups in Chromium 156 and 17/17 in Linux WebKit 27.2 |
+| First screen at 390×844 | Sample/date, Explore the feed, search, sorting, rank and beginning of the first full tweet visible in both engines |
+| Pinned taste@1 probe | 16/16 passed on the final export with external networking blocked |
+| Automated accessibility | Zero violations in the tested feed/dialog states, both engines |
+| Data | 15 public references checked, 13 relevant posts included; complete rendered bodies and captured counters verified |
+| Share metadata | Title, favicon, description, og:title and local 1200×630 og:image present |
 
 ## Scope and assumptions
 
-The requested site is a static reader for tweets about IdentityMD, with dark green styling and Pepe agents equipped with AI hardware. Its one visual idea is an orderly green feed carried by an original tactical Pepe squad illustration.
+The site reads public tweets about IdentityMD, with a dark green feed and an original squad of Pepe agents equipped with AI hardware. No wallet, transaction, backend or live feed was requested; wallet checks are not applicable.
 
-No live feed, account, wallet, or backend was specified. The implementation uses an explicitly dated editorial collection of 12 real public post excerpts from four accounts. “Top tweets” ranks this collection by captured likes + reposts + replies; “Latest” uses original UTC timestamps. It does not claim an exhaustive X ranking. The Snapshot dialog and end-of-feed date explain the data. Provenance, exact source URLs, captured counts, and selection limits are in [sources.md](sources.md). Bookmarks are explicitly local to the browser.
+The collection is explicitly a **ranked sample**, now 13 posts from five accounts, counted on 31 October 2026. The hero discloses the sample and the information button shows the date before the feed controls. Top tweets orders the collection by likes + reposts + replies, breaking ties by date; Latest uses original UTC timestamps. Ranks always describe engagement within this collection. An exhaustive ranking requires an authorized X search/API source or dataset from the requester, which the brief does not supply. No global or live coverage is implied.
 
-Reviewed flows: initial feed, keyword search, combined search/topic filtering, empty search, topic-chip filtering, top/latest sorting, saved view, save/reload/remove, empty saved view, incremental loading, external original-post links, About dialog, keyboard navigation, storage denial/corruption, responsive reflow, text enlargement, and asset loading without external networking. No credentials or on-chain interactions are needed.
+Every recursively reachable quoted-post reference from the original twelve cards was followed to its own public page. Full public-page note text was preferred over truncated syndication previews. Short links, trailing spaces and excess blank lines are omitted; entities are decoded and author words, punctuation, glyphs and paragraphs remain. Media, quoted cards and thread replies are reachable through original links. [sources.md](sources.md) records counts, sources, inclusion decisions and data limits. Authors' factual and financial claims were not independently verified.
 
-The supplied browser tool failed to initialize because its configured Chrome distribution was absent. Actual rendering and interaction validation was completed with isolated Playwright Chromium and WebKit installations instead. WebKit needed isolated system libraries and a software-rendering launcher; those test dependencies are outside the delivery. No required browser observation is inferred from source alone.
+Reviewed flows: initial feed; search/combined filters; filter and loaded-count preservation under repeated feed anchors; real Feed/Saved transitions; empty-state recovery; top/latest ranking; save/reload/remove; corrupt/denied storage; loading 6, then 6, then 1 post; original links; dialog keyboard focus/dismissal; skip/search focus; visible mobile project/people; responsive reflow; 200% root-text enlargement; local resources with external requests blocked.
 
-## Requirement coverage
+The supplied browser tool could not initialize because its configured Chrome distribution was absent. Rendered checks instead used isolated Playwright Chromium and WebKit. WebKit needed isolated libraries and a software-rendering launcher; those dependencies and caches remain outside the repository. No rendered observation is inferred from source alone.
 
-| Requirement | Result and implementation |
-| --- | --- |
-| “A website showing the top tweets about identity MD” | Met: sourced excerpts, observed engagement, top/latest ordering, original permalinks in `src/posts.ts` and `PostCard.tsx` |
-| “dark green with a theme of pepes armed with AI” | Met: forest/lime palette and original squad, circuit blaster, scout drone, and frog mark |
-| “usable website … working primary interactions and responsive layouts” | Met: actual browser checks described below; five viewport widths |
-| “dist/index.html and its assets … alongside the source and lockfile, with relative asset URLs” | Included for the automatic Git submission: `dist/`, source, manifest and lockfile are present; Vite base is `./`; export is not ignored. No manual `.git/` mutation was performed. |
-| “production build, typecheck and useful interaction validation … actual results and limitations” | Met: successful production build/typecheck, export validation, 15 browser interaction groups per engine; evidence retained |
-| “applies … Better Interface … six domains … fixes … records coverage, findings and limitations” | Met: workflow and all six core domains read and applied during implementation; consolidated review below; root `DESIGN.md` describes final source |
-| “first screen at 390 … product and main action … title, favicon, description, og:title and og:image” | Met: both browser first-screen checks include headline, search, first excerpt and View on X; metadata and actual share image checked |
-| “DESIGN.md … tokens, typography, components and responsive behavior” | Met: source-derived document with implemented values and verification limits |
-| “README … install, preview and rebuild” | Met: standard npm commands, static-hosting behavior, data-update instructions, checks, results and limits |
+## Acceptance coverage
 
-Hosting and the final publisher-assigned address are outside this assignment. The export and all required runtime files are complete; no production URL is guessed.
+The sourced ranked sample, complete available tweet text and original links implement the requested reader. Existing tactical Pepe art and the corrected green ramp implement the requested look. Both engines exercised the interactions at 320, 390, 768, 1024 and 1440 CSS pixels, without horizontal overflow. The initial 390 screen exposes the product and primary action, and all required metadata is present. The finished `dist/`, source, manifest and lockfile are included for automatic submission, with Vite base `./` and hash navigation. Root `README.md` documents install, preview, rebuild and checks; root `DESIGN.md` records the final source-derived system.
 
-## Six-domain review
+Hosting and the final URL belong to the publisher after submission. Relative og:image is deliberate; no production social-crawler unfurl was tested.
 
-| Domain | Coverage and evidence | Unperformed / not applicable |
+## Better Interface coverage
+
+All six core domains were read and applied to the affected components during corrections, then checked against the finished export. Attribution and pinned licenses remain in `THIRD_PARTY_NOTICES.md` and `artifacts/design-guidance-licenses.txt`.
+
+| Domain | Checked | Unperformed / not applicable |
 | --- | --- | --- |
-| Accessibility | **Checked.** Native links/buttons/search/select/dialog; real labels and names; heading/landmark outline; skip link; live counts/save status; explicit focus perimeter; keyboard skip/search/dialog paths, Tab and Shift+Tab containment, Escape/backdrop/close and focus return; removal focus recovery; axe scans; reduced-motion source and probe; targets pass probe baseline. | No screen-reader session, physical-device/touch keyboard test, native browser zoom, or rendered forced-colors check. A snapshot or axe result is not represented as a screen-reader test. Transaction and media controls are not applicable. |
-| Layout | **Checked.** Shared edges, controls preceding content, grid collapse, overflow, first-screen placement, full names and readable source actions. Browser widths 320, 390, 768, 1024, 1440; 200% root-text enlargement. Artwork clipping is confined to the hero. | No translated copy or RTL version; ≥1500px branch reviewed in source but not rendered. English is the supported language. |
-| Writing | **Checked.** Button labels match actions; search labels persist; recovery explains a next step; static sample, excerpt status, capture date, local saves and ranking method are explained. Authors’ historic claims remain attributed. No invented live counters, verified badges, likes/reposts, or account sync. | Locale translation and financial claims inside linked authors’ posts were not independently evaluated. No consequential form or payment flow exists. |
-| Typography | **Checked.** Local Manrope; 400/500/700; six-token scale, five visible sizes per probe viewport; heading order, measure, wrapping, numerical stability, 16px mobile inputs, full handles, text enlargement. Screenshots inspected at phone and desktop sizes in both engines. | Native 200% browser zoom and OS font substitution beyond the bundled font were not tested. |
-| Colors | **Checked.** Shared primitive/semantic tokens and section-local art surfaces reviewed; actual computed solid foreground/background pairs measured; all selected pairs exceed 4.5:1. Caption’s own solid backing measured 9.40:1. State also has shape/text/semantics. | Probe conservatively marks the caption as overlapping artwork, so it omits that one pair; the separate rendered CSS measurement covers its solid backing. Decorative SVG art is not evaluated as body text. No alternate theme is implemented. |
-| UI | **Checked.** Flat tonal layers, structural borders without shadows, consistent icon set, readable selected states, working empty/error states, focus recovery, and restrained hover/press motion. Reduced-motion probe finds no endless animation or `transition: all`. Final PNG and SVG art inspected. | No 10%-speed Animations-panel replay was performed. There are only 150ms hover/press transitions; staged animation, autoplay, loading, and theme-switch states are not applicable. |
+| Accessibility | Native controls/dialog; persistent labels; author/date article names and named stats; visible mobile ranks; skip/search keyboard focus; Tab/Shift+Tab, Escape/close/backdrop and focus return; saved-removal recovery; live statuses; axe feed/dialog scans; reduced-motion/target probe | No native screen-reader session, physical-device keyboard/touch test or forced-colors rendering. Compact targets pass the 24px/spacing baseline; some are below the comfortable 44px preference. |
+| Layout | Shared edges, controls before content, wrapping, stacked project/people sidebar; normal phone copy clear of artwork; first-screen product; five viewport widths; 200% root-text enlargement | No native browser zoom, translation or RTL run. The ≥1500px branch was reviewed in source, not rendered. English is the shipped language. |
+| Writing | Visible sample/date, accurate ranking/local saves, complete attributed text, short placeholder, noun headings, fewer competing lines, unsupported ownership claims removed, recoverable empty states | Authors' historic claims and external-site uptime not independently verified. No payment/consequential form exists. |
+| Typography | Local Manrope 400/500/700, six-token scale, five visible sizes per probe viewport, 16px phone inputs, paragraph preservation, 68ch post measure, full wrapping handles, tabular counts, readable options | No OS font-substitution study or native zoom. Quoted author casing, punctuation and emoji are retained. |
+| Colors | Existing semantic tokens; six green primitives corrected; matching theme-color; seven actual solid foreground/background pairs measured in both engines, all ≥4.5:1; selected states have non-color cues | Measurements resolve solid backgrounds, not every pixel of the decorative art/radial hero. No alternate theme requested or added. |
+| UI | Existing flat surfaces/borders; palette chevron with native select behavior; matched 48px phone controls; save/sort/topic states; empty/storage-error states; 150ms hover/press transitions and reduced motion | No 10%-speed Animations-panel replay. Loading, autoplay, transaction and theme-switch states are absent. |
 
-## Findings and corrections
+## Reproduced findings and corrections
 
-All applicable findings below were corrected. Citations point to the final source rules or handlers. No unresolved high or medium findings remain.
+The full details are in [`.imd-responses.json`](../.imd-responses.json). [revision-evidence.json](revision-evidence.json) retains before/after measurements, accessibility snapshots and source checks; its before states intentionally describe the original defects.
 
-### High: illustration caused horizontal overflow
+| ID prefix | Final source | Evidence, correction and recheck |
+| --- | --- | --- |
+| `077cf180` | `src/posts.ts:175`, `src/App.tsx:116`, `src/App.tsx:122` | Missing thesis totals 297 versus old #03's 197. Added it at #03, followed quote references, rechecked counts and disclosed sample/date. Both suites assert the new rank and visible disclosure. |
+| `f6c50376` | `src/posts.ts:12`, `src/components/PostCard.tsx:20`, `src/styles.css:100` | All 12 original cards appended ellipses. Restored full available public-page text and paragraphs/glyphs, removed excerpt UI and mobile whitespace collapse. All 13 DOM bodies per engine match normalized captured source text. |
+| `4ab6cdb0` | `src/styles.css:190` | Original opacity .6 at 390/.5 at 320 plus mask/clip. Removed them; 58% art and 18ch copy. Final opacity 1 and no mask/clip-path; screenshots inspected, no overflow. |
+| `3a9198c5` | `src/styles.css:5`, `index.html:6` | Original root rgb(11,19,14) read near-black in screenshots. Existing ramp now yields rgb(15,33,22) root and rgb(20,41,27) cards. Updated theme-color and measured contrast again. |
+| `f4b5b610` | `src/styles.css:194`, `src/components/PostCard.tsx:17` | Phone ranks were display:none and absent from the accessibility tree. Removed hiding; visible #01 and accessibility snapshot confirmed, all checked widths without overflow. |
+| `567c479a` | `src/styles.css:183` | Sidebar hid the only project link and all people below 901px. Only duplicate topics now hide; project/people/note stack after feed. Both engines verify the project link and five people at every width. |
+| `46d420ea` | `src/App.tsx:44`, `src/App.tsx:48` | Both engines reproduced oracle/3 results becoming empty/12 on first anchor only. Route ref resets only for real view changes. Final oracle/4 survives both clicks; topic, loaded count and desktop nav also checked. |
+| `fa69e2a9` | `src/styles.css:81`, `src/styles.css:192` | WebKit select was 54px versus search 48px, labels 6px apart; Chromium 46px versus 48px. Native select now has appearance:none/chevron; both phone controls 48px, labels align, all options fit and selection works. |
+| `bdf762c6` | `src/App.tsx:116`, `src/App.tsx:139`, `src/App.tsx:147` | Confirmed competing caption/sidebar/footer lines. Removed them, renamed headings Tweets/Topics, footer uses brand. Art feet uncovered and topic list moves up. Copy/slogan probe passes. |
+| `ee4ef5e9` | `src/components/AboutDialog.tsx:25`, `src/App.tsx:147` | Unsupported independence claims confirmed and removed from UI and corresponding README/DESIGN/attribution text. Dialog gives computed count/date; both engines checked. |
+| `b1466ba4` | `src/App.tsx:124` | Placeholder needed 206px Chromium/210px WebKit for 93–145px room. Keywords needs 70px/71.40px and fits the final 73px minimum room at 320; visible label retained. |
+| `a05dfee8` | `src/components/PostCard.tsx:8`, `src/components/PostCard.tsx:23` | Original article used its profile-link name and generic stats lost their label. Both final snapshots expose Post by Adam, Oct 7 and group Engagement at the snapshot date. |
 
-- Source: `src/styles.css:54`, `.hero { … overflow:hidden … }`, and `src/styles.css:61`, `.hero-art`.
-- Before: the first probe measured document widths of 358px at a 320px viewport and 414px at 390px. The absolutely positioned illustration extended past the panel.
-- Change: clip the artwork at the hero’s existing rounded boundary. Text and controls retain their inset space.
-- Recheck: taste layout passes at 320/390/1440 with no overlaps or text clipping; both engines also pass at 768 and 1024. The final 390 screenshots confirm the panel edge.
-
-### High: About dialog did not wrap keyboard focus
-
-- Source: `src/components/AboutDialog.tsx:14`, native dialog `onKeyDown` handler.
-- Before: the Chromium keyboard check found focus outside the dialog after cycling past its last control.
-- Change: explicitly wrap Tab/Shift+Tab between the native dialog’s first and last controls; retain native inert/modal semantics, Escape dismissal and trigger focus return.
-- Recheck: forward/reverse keyboard cycle, Escape, close and backdrop all pass in Chromium and WebKit. Background scrolling is locked by `src/styles.css:18`.
-
-### Medium: enlarged text exceeded phone width
-
-- Source: `src/styles.css:66`, `:72`, `:84`, `:99`, `:104`, `:107`, and `:197` (heading/filter/toolbar/context/footer wrapping and rem-based select widths).
-- Before: at 390px with 200% root text, the browser assertion detected `scrollWidth > innerWidth`.
-- Change: allow grouped rows to wrap, let handles break as needed, and size topic fields in rem units rather than fixed pixels.
-- Recheck: both browsers pass 200% text enlargement at 390 without horizontal overflow. This is text enlargement, not a claim of browser-native zoom testing.
-
-### Medium: skip link could switch the saved view
-
-- Source: `src/App.tsx:100`, skip link click handler.
-- Before: source review showed `#feed` was both a skip target and the route that reset the view to the full feed.
-- Change: focus and scroll the existing feed section without changing the hash or saved view.
-- Recheck: the keyboard test activates the skip link while in Saved, confirms Saved remains active, and confirms focus is on the content section in both engines.
-
-### Medium: removing a saved post removed its focused control
-
-- Source: `src/App.tsx:72`, `toggleSave`.
-- Before: source review found no focus destination when the focused saved card was removed.
-- Change: focus another saved action or the empty-state Explore link after the DOM updates.
-- Recheck: remove-last-saved path reaches the empty-state link with focus, in both engines.
-
-### Low: caption lacked an independently measurable backing
-
-- Source: `src/styles.css:62`, `.hero-caption`.
-- Before: the probe flagged the caption’s overlap with the artwork as an unmeasured contrast pair. No failing ratio was assumed.
-- Change: give the existing caption a solid backing matching the hero and measure the actual rendered pair separately.
-- Recheck: `rgb(189,207,175)` over `rgb(21,40,27)` is **9.40:1**, confirmed in the browser contrast record. The probe’s geometry-based exception remains documented.
-
-### Low: composed share artwork inherited black fills
-
-- Source: `src/artwork/social.svg:1`, the translated squad group with `fill="none"`.
-- Before: inspection of the first raster showed black fills in open illustration paths because the original SVG root’s fill rule was lost when composing the share image.
-- Change: preserve `fill="none"` on the embedded illustration group and regenerate the PNG.
-- Recheck: the corrected 1200×630 local PNG was opened and visually inspected; no unintended black patches remain.
-
-Additional build correction: an early pinned Vite version produced one high audit advisory. Dependencies were updated and relocked. The final npm audit reports **0 vulnerabilities**. Browser-library setup failures and early asynchronous/lazy-image assertions were resolved in the isolated verification harness; they are not claimed as shipped application defects.
+The thirteenth post also exposed a singular Load 1 more post state; its label was corrected and that final loading step is exercised. Existing skip behavior, dialog trap/focus return, saved-removal focus, storage handling and local packaging remain intact and pass their checks.
 
 ## Commands and actual results
 
-Dependencies were installed in an isolated copy so no dependency directory is part of the repository. Build input files were synchronized from the repository; the final export was copied back. The commands below are the scripts executed within that copy. Temporary launcher/cache path flags are environment-only and are not required in the submitted source.
+Dependencies were installed in an isolated copy, then repository build inputs and checks were synchronized there. The successful export was copied back to `dist/`, replacing obsolete generated bundles. Final source/check inputs and exports were compared byte for byte. Interaction/export scripts were invoked through Node from the repository, using the synchronized isolated script files to resolve dependencies; the table gives their equivalent npm script names. Temporary module/browser/library path flags are environment-only, not delivered requirements.
 
 | Command | Actual outcome |
 | --- | --- |
-| `npm ci --no-audit --no-fund` | Locked dependencies installed successfully in the isolated build directory |
-| `npm run build` | Exit 0; TypeScript and Vite 7.3.7 production build completed; 33 modules transformed |
+| `npm ci --no-audit --no-fund` | Locked dependencies installed in isolated directory; manifest and lockfile unchanged |
+| `npm run build` | Exit 0; TypeScript and Vite 7.3.7, 33 modules |
 | `npm run typecheck` | Exit 0; `tsc --noEmit` |
-| `npm run check:export` | Exit 0; 12 export files, relative references resolve, no dependency archives/maps, metadata present; 513,684 export bytes |
-| `npm run check:interactions` | Exit 0; **15/15 groups** in Chromium |
-| `npm run check:interactions -- --webkit` | Exit 0; **15/15 groups** in WebKit, using the isolated launcher |
-| `node .imd/reads/skills/design-critic/scripts/taste.mjs --out test/scratch/taste --offline` | Exit 0; **16/16 checks** against the actual export from the repository root |
-| `npm audit --json` | Exit 0; **0 vulnerabilities** in the final lockfile |
+| `npm run check:export` | Exit 0; 13 files, 517,838 bytes, relative assets resolve, metadata present, no maps/dependency archives |
+| `npm run check:interactions` | Exit 0; 17/17 groups, Chromium 156 |
+| `npm run check:interactions -- --webkit` | Exit 0; 17/17 groups, Linux WebKit 27.2, isolated launcher |
+| `node .imd/reads/skills/design-critic/scripts/taste.mjs --out test/scratch/taste --offline` | Exit 0; 16/16 on final export, isolated Playwright module/browser path |
+| Public-source/DOM comparison | 13 rendered post bodies per engine match captured text; source counter sets match public-page captures; all 15 permalinks return HTTP 200 during source checks |
 
-The 15 interaction groups verify: first-screen product/source action; search and no-result recovery; native topic plus combined search and topic chips; top/latest sorting; save/saved route/reload/removal; incremental loading with focus; real original-post URL shapes and safe new tabs; dialog dismissal and focus; keyboard skip and visible search focus; five responsive widths; axe feed/dialog scans; text enlargement; corrupted storage; denied storage with usable session bookmarks; and complete local images with zero page/console errors or missing resources while external networking is blocked. Expected request cancellation during the test’s own navigation/reloads is excluded from resource failures.
+The first interaction run stopped at an overly exact author text locator that included hidden new-tab text. The check now addresses the accessible heading; both complete suites pass. Initial missing browser/libraries were resolved with the isolated launcher. These setup/assertion issues are not shipped product defects. No new npm audit was performed for the unchanged lockfile; the previous round's audit result is not presented as a new check.
 
-Browser preview runs under `/preview/` to verify gateway/subpath behavior. No external feed API is called by the export. Every original tweet permalink was separately fetched successfully during sourcing; future availability or X login requirements are outside the static site’s control.
+Final machine-readable evidence: [interaction-results.json](interaction-results.json), [accessibility-results.json](accessibility-results.json), [contrast.json](contrast.json), [taste-results.json](taste-results.json), [revision-evidence.json](revision-evidence.json).
 
-## Retained evidence
+## Rendered evidence and delivery
 
-- [Interaction results](interaction-results.json): actual final per-browser results.
-- [Accessibility results](accessibility-results.json): zero violations, pass IDs, and incomplete check IDs for feed/dialog in both browsers. Incomplete checks are not converted to passes.
-- [Measured rendered contrast pairs](contrast.json): actual foreground/background values and ratios.
-- [Pinned taste results](taste-results.json): all 16 final check outputs.
-- [Chromium first screen, 390×844](screenshots/mobile-390.png).
-- [WebKit first screen, 390×844](screenshots/webkit-mobile-390.png).
-- [Desktop first screen, 1440×900](screenshots/desktop-1440.png).
-- [About dialog at 390](screenshots/about-390.png).
-- [Keyboard focus at 390](screenshots/keyboard-focus-390.png).
+Final screenshots: [Chromium 390](screenshots/mobile-390.png), [WebKit 390](screenshots/webkit-mobile-390.png), [desktop](screenshots/desktop-1440.png), [About](screenshots/about-390.png), [keyboard focus](screenshots/keyboard-focus-390.png). Original/revised phone and desktop views, final 320 view, focused search and About states were inspected. Other responsive/enlarged-text/probe screenshots were generated in scratch, which is excluded from submission.
 
-The screenshots listed above were actually generated and inspected. Additional 320/768/1024/1440, focus and enlarged-text evidence was generated in scratch during the run; scratch is intentionally excluded from the delivery.
+The complete export contains HTML, one generated JS/CSS pair, local font/license, five avatars, favicon, squad SVG and share PNG. Editable art remains in source. No dependency/cache directory, registry mirror, package archive or submodule was added. The existing ignore file is unchanged, its explicit path budget retained, and dist remains included. [submission-integrity.json](submission-integrity.json) records final bytes/hashes/path budgets; delivery is below 8,388,608 bytes.
 
-## Delivery integrity and limitations
-
-The complete local export contains only the HTML entry, generated JS/CSS, local Manrope font/license, four author avatars, frog favicon, squad SVG, and share PNG. No source map, unused composed SVG, dependency archive, registry mirror, cache, or submodule is required. The editable share SVG remains in the source. `.gitignore` has an explicit path allowance in `submission-budget.json`; `dist/` is included.
-
-The data is intentionally a limited dated collection. A live exhaustive X feed would require a separate authorized data service. Saves are browser-local and unsynced. No native screen-reader, real iPhone/Safari, physical touch/keyboard, native zoom, Firefox, translation/RTL, or rendered forced-colors checks were performed. Automated axe/probe results are bounded evidence, not complete accessibility certification. The publisher assigns the final address, so `og:image` is relative as required for the export; no live social-crawler unfurl at a production domain was tested.
-
-Path allowances are recorded in `submission-budget.json`; actual final bytes and hashes are in `submission-integrity.json`. The complete delivery fits within the 8,388,608-byte limit.
+Remaining limits: browser-local unsynced bookmarks; no exhaustive/live X source; no real iPhone/Safari, Firefox, native screen reader, native 200% zoom, translated/RTL page, forced-colors rendering, motion-panel replay or production unfurl test. Automated axe/probe results have bounded coverage. No requester value or unavailable service is fabricated.

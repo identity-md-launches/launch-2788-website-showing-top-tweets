@@ -1,6 +1,6 @@
 # Third-party notices
 
-The Swamp is an independent community reader. It is not affiliated with X, IdentityMD, or the featured authors. Post excerpts and profile images remain the property of their respective authors; original post links and acquisition details are in [artifacts/sources.md](artifacts/sources.md). The Pepe-inspired vector artwork was drawn for this site; the Pepe character was created by Matt Furie.
+The Swamp displays public posts about IdentityMD. Post text and profile images remain the property of their respective authors; original post links and acquisition details are in [artifacts/sources.md](artifacts/sources.md). The Pepe-inspired vector artwork was drawn for this site; the Pepe character was created by Matt Furie.
 
 ## Manrope
 

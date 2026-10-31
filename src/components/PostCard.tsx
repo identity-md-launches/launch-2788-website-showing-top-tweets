@@ -5,7 +5,7 @@ const dateFormatter = new Intl.DateTimeFormat('en', { day: 'numeric', month: 'sh
 
 export default function PostCard({ post, rank, saved, onSave, onTopic }: { post: Post; rank: number; saved: boolean; onSave: (id: string) => void; onTopic: (topic: Topic) => void }) {
   return (
-    <article className="post-card" aria-labelledby={`author-${post.id}`} data-post-id={post.id}>
+    <article className="post-card" aria-label={`Post by ${post.author}, ${dateFormatter.format(new Date(post.date))}`} data-post-id={post.id}>
       <div className="post-heading">
         <a className="avatar-link" href={`https://x.com/${post.handle}`} target="_blank" rel="noreferrer" aria-label={`${post.author} on X (opens new tab)`}>
           <img className="avatar" src={post.avatar} alt="" width="44" height="44" loading="lazy" />
@@ -17,10 +17,10 @@ export default function PostCard({ post, rank, saved, onSave, onTopic }: { post:
         <span className="post-rank" title="Rank by engagement in this collection">#{String(rank).padStart(2, '0')}</span>
         <Icon name="x" size={18} className="post-x" />
       </div>
-      <blockquote><p>{post.excerpt}<span className="excerpt-end" aria-label="Excerpt"> …</span></p></blockquote>
-      <div className="post-context"><button className="topic-tag" type="button" onClick={() => onTopic(post.topic)} aria-label={`Filter by ${post.topic}`}><Icon name="hash" size={13} />{post.topic}</button><span className="excerpt-label">Post excerpt</span></div>
+      <blockquote><p>{post.excerpt}</p></blockquote>
+      <div className="post-context"><button className="topic-tag" type="button" onClick={() => onTopic(post.topic)} aria-label={`Filter by ${post.topic}`}><Icon name="hash" size={13} />{post.topic}</button></div>
       <div className="post-footer">
-        <div className="post-stats" aria-label="Engagement at the snapshot date">
+        <div className="post-stats" role="group" aria-label="Engagement at the snapshot date">
           <span title={`${post.replies} replies`}><Icon name="reply" size={17} /><span className="sr-only">Replies: </span>{post.replies}</span>
           <span title={`${post.reposts} reposts`}><Icon name="repost" size={18} /><span className="sr-only">Reposts: </span>{post.reposts}</span>
           <span title={`${post.likes} likes`}><Icon name="heart" size={17} /><span className="sr-only">Likes: </span>{post.likes}</span>

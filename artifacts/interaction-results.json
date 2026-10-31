@@ -3,7 +3,11 @@
     "engine": "chromium",
     "results": [
       {
-        "name": "390px first screen includes product, search, first tweet and View on X",
+        "name": "390px first screen includes product, sample/date, search, sort and the first tweet",
+        "passed": true
+      },
+      {
+        "name": "feed anchors consistently preserve search, topic and the loaded count",
         "passed": true
       },
       {
@@ -32,6 +36,10 @@
       },
       {
         "name": "about dialog, Escape, focus containment and focus return",
+        "passed": true
+      },
+      {
+        "name": "complete post text, original paragraphs and named engagement groups",
         "passed": true
       },
       {
@@ -69,7 +77,11 @@
     "engine": "webkit",
     "results": [
       {
-        "name": "390px first screen includes product, search, first tweet and View on X",
+        "name": "390px first screen includes product, sample/date, search, sort and the first tweet",
+        "passed": true
+      },
+      {
+        "name": "feed anchors consistently preserve search, topic and the loaded count",
         "passed": true
       },
       {
@@ -98,6 +110,10 @@
       },
       {
         "name": "about dialog, Escape, focus containment and focus return",
+        "passed": true
+      },
+      {
+        "name": "complete post text, original paragraphs and named engagement groups",
         "passed": true
       },
       {

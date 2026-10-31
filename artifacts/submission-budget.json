@@ -14,9 +14,15 @@
     "index.html": 6000,
     "README.md": 20000,
     "DESIGN.md": 30000,
-    "THIRD_PARTY_NOTICES.md": 20000
+    "THIRD_PARTY_NOTICES.md": 20000,
+    ".imd-responses.json": 24000
   },
-  "excludedAtEveryDepth": ["node_modules/", ".vite/", ".cache/", "coverage/"],
+  "excludedAtEveryDepth": [
+    "node_modules/",
+    ".vite/",
+    ".cache/",
+    "coverage/"
+  ],
   "scratchExcluded": "test/scratch/",
-  "note": "Explicit budget authorizing the new .gitignore; dist is intentionally included. Final byte measurements are recorded in artifacts/validation.md."
+  "note": "Existing explicit .gitignore allowance retained; the ignore file is unchanged in this revision. dist is intentionally included. Revision answers have a 24,000-byte allowance. Final measurements are in submission-integrity.json."
 }

@@ -44,14 +44,46 @@ try {
   const articles = page.locator('.post-card');
   await page.goto(base, { waitUntil: 'networkidle' });
   await page.evaluate(() => document.fonts.ready);
-  await check('390px first screen includes product, search, first tweet and View on X', async () => {
+  await check('390px first screen includes product, sample/date, search, sort and the first tweet', async () => {
     assert.equal(await page.title(), 'The Swamp · Top IdentityMD tweets');
     assert.equal(await articles.count(), 6);
-    for (const target of [page.locator('h1'), page.getByRole('searchbox'), articles.first().locator('blockquote'), articles.first().getByRole('link', { name: /^View on X:/ })]) {
+    for (const target of [page.locator('h1'), page.locator('.hero .button'), page.locator('.hero p'), page.locator('.snapshot-info'), page.getByRole('searchbox'), page.locator('.sort-controls')]) {
       const box = await target.boundingBox(); assert.ok(box && box.y >= 0 && box.y + box.height <= 844, `Outside first screen: ${await target.textContent()} ${JSON.stringify(box)}`);
     }
+    const quote = await articles.first().locator('blockquote').boundingBox();
+    assert.ok(quote && quote.y >= 0 && quote.y + 27 <= 844, 'The start of the first tweet must be on screen.');
+    assert.equal(await page.locator('.hero p').textContent(), 'A ranked sample of tweets about IdentityMD.');
+    assert.equal(await page.locator('.snapshot-info').textContent(), 'Counted 31 Oct 2026');
     assert.ok((await articles.first().getAttribute('data-post-id')) === '2107939454396567581');
     await page.screenshot({ path: `${evidenceRoot}/${engine}-390-first-screen.png`, fullPage: false });
+  });
+  await check('feed anchors consistently preserve search, topic and the loaded count', async () => {
+    await page.getByRole('searchbox').fill('oracle');
+    await page.getByLabel('Topic', { exact: true }).selectOption('AI agents');
+    const results = await page.locator('.results-label').textContent();
+    for (let i = 0; i < 2; i++) {
+      await page.locator('.hero .button').click();
+      await page.waitForFunction(() => location.hash === '#feed');
+      assert.equal(await page.getByRole('searchbox').inputValue(), 'oracle');
+      assert.equal(await page.getByLabel('Topic', { exact: true }).inputValue(), 'AI agents');
+      assert.equal(await page.locator('.results-label').textContent(), results);
+    }
+    await page.goto(base, { waitUntil: 'networkidle' });
+    await page.getByRole('button', { name: 'Load 6 more posts', exact: true }).click();
+    assert.equal(await articles.count(), 12);
+    await page.locator('.hero .button').click();
+    await page.waitForFunction(() => location.hash === '#feed');
+    assert.equal(await articles.count(), 12);
+    await page.setViewportSize({ width: 1440, height: 900 });
+    await page.goto(base, { waitUntil: 'networkidle' });
+    await page.getByRole('searchbox').fill('oracle');
+    for (let i = 0; i < 2; i++) {
+      await page.getByRole('link', { name: 'The feed', exact: true }).click();
+      await page.waitForFunction(() => location.hash === '#feed');
+      assert.equal(await page.getByRole('searchbox').inputValue(), 'oracle');
+    }
+    await page.setViewportSize({ width: 390, height: 844 });
+    await page.goto(base, { waitUntil: 'networkidle' });
   });
   await check('keyword search and recoverable empty state', async () => {
     await page.getByRole('searchbox').fill('mac app');
@@ -80,6 +112,9 @@ try {
     assert.equal(await articles.first().getAttribute('data-post-id'), '2116290108060275184');
     await page.getByRole('button', { name: 'Top tweets', exact: true }).click();
     assert.equal(await articles.first().getAttribute('data-post-id'), '2107939454396567581');
+    assert.equal(await articles.nth(2).getAttribute('data-post-id'), '2103142412000600159');
+    assert.equal(await articles.nth(2).locator('.post-rank').textContent(), '#03');
+    assert.ok(await articles.nth(2).getByRole('heading', { name: 'AdamOnFinance on X (opens new tab)', exact: true }).isVisible());
   });
   await check('bookmark save, saved route, reload persistence and removal', async () => {
     await articles.first().getByRole('button', { name: 'Save post by Adam', exact: true }).click();
@@ -98,22 +133,24 @@ try {
     assert.ok(await page.getByRole('heading', { name: 'Keep the good ones.' }).isVisible());
     await page.waitForFunction(() => document.activeElement?.matches('.empty-state a'));
     await page.locator('.empty-state').getByRole('link', { name: 'Explore the feed' }).click();
-    await page.getByRole('heading', { name: 'From the timeline', exact: true }).waitFor();
+    await page.getByRole('heading', { name: 'Tweets', exact: true }).waitFor();
     assert.equal(await articles.count(), 6);
   });
   await check('load more appends remaining posts and moves focus to new content', async () => {
     await page.getByRole('button', { name: 'Load 6 more posts', exact: true }).click();
     assert.equal(await articles.count(), 12);
+    await page.getByRole('button', { name: 'Load 1 more post', exact: true }).click();
+    assert.equal(await articles.count(), 13);
     assert.equal(await page.getByRole('button', { name: /^Load/ }).count(), 0);
     await page.waitForFunction(() => document.activeElement?.closest('[data-post-id]')?.getAttribute('data-post-id'));
   });
   await check('source links lead to real tweet permalinks and use safe new tabs', async () => {
     const links = await page.locator('.post-link').evaluateAll(elements => elements.map(link => ({ href: link.href, rel: link.rel, target: link.target })));
-    assert.equal(links.length, 12);
+    assert.equal(links.length, 13);
     for (const link of links) { assert.match(link.href, /^https:\/\/x\.com\/[\w]+\/status\/\d+$/); assert.equal(link.target, '_blank'); assert.match(link.rel, /noreferrer/); }
   });
   await check('about dialog, Escape, focus containment and focus return', async () => {
-    const trigger = page.getByRole('button', { name: 'Snapshot', exact: true });
+    const trigger = page.getByRole('button', { name: 'Counted 31 Oct 2026', exact: true });
     await trigger.click();
     assert.ok(await page.getByRole('dialog').isVisible());
     assert.ok(await page.getByText('How “Top tweets” works').isVisible());
@@ -131,6 +168,16 @@ try {
     await trigger.click();
     await page.mouse.click(4, 4);
     assert.equal(await page.getByRole('dialog').count(), 0);
+  });
+  await check('complete post text, original paragraphs and named engagement groups', async () => {
+    assert.equal(await page.locator('.excerpt-end, .excerpt-label').count(), 0);
+    assert.match(await page.locator('[data-post-id="2107939454396567581"] blockquote').textContent(), /\$15,000\+ in rewards/);
+    assert.match(await page.locator('[data-post-id="2109336654259642456"] blockquote').textContent(), /4\/10: Disagreed with Polymarket, got the right answer\./);
+    assert.equal(await articles.first().locator('blockquote').evaluate(el => getComputedStyle(el).whiteSpace), 'pre-line');
+    const snapshot = await articles.first().ariaSnapshot();
+    assert.match(snapshot, /article "Post by Adam, Oct 7"/);
+    assert.match(snapshot, /group "Engagement at the snapshot date"/);
+    assert.match(snapshot, /#01/);
   });
   await check('keyboard skip link and visible focus', async () => {
     await page.goto(base, { waitUntil: 'networkidle' });
@@ -153,6 +200,23 @@ try {
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `Horizontal overflow at ${width}px`);
       const clipped = await page.locator('input, select, .post-link, .post-author').evaluateAll(elements => elements.filter(element => { const r = element.getBoundingClientRect(); return r.x < 0 || r.right > innerWidth; }).map(element => element.outerHTML));
       assert.deepEqual(clipped, [], `Clipped controls at ${width}px`);
+      assert.ok(await articles.first().locator('.post-rank').isVisible(), `Missing rank at ${width}px`);
+      assert.ok(await page.getByRole('link', { name: /^Explore IdentityMD/ }).isVisible(), `Missing project link at ${width}px`);
+      assert.equal(await page.locator('.person-row:visible').count(), 5);
+      if (width <= 390) {
+        assert.equal(await page.locator('.hero-art').evaluate(el => getComputedStyle(el).opacity), '1');
+        const controls = await page.locator('.filter-controls').evaluate(() => {
+          const select = document.querySelector('select'), input = document.querySelector('.input-wrap');
+          const style = getComputedStyle(select), canvas = document.createElement('canvas').getContext('2d');
+          canvas.font = style.font;
+          const available = select.clientWidth - parseFloat(style.paddingInlineStart) - parseFloat(style.paddingInlineEnd);
+          return { selectHeight: select.getBoundingClientRect().height, searchHeight: input.getBoundingClientRect().height,
+            appearance: style.appearance, clippedOptions: [...select.options].filter(option => canvas.measureText(option.textContent).width > available).map(option => option.textContent) };
+        });
+        assert.equal(controls.selectHeight, controls.searchHeight);
+        assert.equal(controls.appearance, 'none');
+        assert.deepEqual(controls.clippedOptions, [], `Clipped topic values at ${width}px`);
+      }
       await page.screenshot({ path: `${evidenceRoot}/${engine}-${width}.png`, fullPage: false });
     }
   });
@@ -165,7 +229,7 @@ try {
         const rgb = color.match(/[\d.]+/g).slice(0, 3).map(Number).map(channel => { const value = channel / 255; return value <= .04045 ? value / 12.92 : ((value + .055) / 1.055) ** 2.4; });
         return rgb[0] * .2126 + rgb[1] * .7152 + rgb[2] * .0722;
       };
-      return ['html', '.post-card blockquote', '.post-meta', '.topic-tag', '.button-primary', '.hero-caption', '.project-section p'].map(selector => {
+      return ['html', '.post-card blockquote', '.post-meta', '.topic-tag', '.button-primary', '.topic-field select', '.project-section p'].map(selector => {
         const element = document.querySelector(selector), foreground = getComputedStyle(element).color;
         let parent = element, background = 'rgba(0, 0, 0, 0)';
         while (parent && background === 'rgba(0, 0, 0, 0)') { background = getComputedStyle(parent).backgroundColor; parent = parent.parentElement; }
@@ -175,7 +239,7 @@ try {
     });
     assert.ok(pairs.every(pair => pair.ratio >= 4.5));
     await writeFile(`${evidenceRoot}/${engine}-contrast.json`, JSON.stringify(pairs, null, 2));
-    await page.getByRole('button', { name: 'Snapshot', exact: true }).click();
+    await page.getByRole('button', { name: 'Counted 31 Oct 2026', exact: true }).click();
     const dialog = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze();
     await writeFile(`${evidenceRoot}/${engine}-axe-dialog.json`, JSON.stringify({ violations: dialog.violations, passes: dialog.passes.map(item => item.id), incomplete: dialog.incomplete.map(item => item.id) }, null, 2));
     assert.deepEqual(dialog.violations.map(item => ({ id: item.id, nodes: item.nodes.map(node => node.target) })), []);

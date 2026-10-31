@@ -31,7 +31,6 @@
         "target-size"
       ],
       "incomplete": [
-        "aria-prohibited-attr",
         "color-contrast"
       ]
     },
@@ -93,7 +92,6 @@
         "target-size"
       ],
       "incomplete": [
-        "aria-prohibited-attr",
         "color-contrast"
       ]
     },

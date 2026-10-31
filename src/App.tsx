@@ -41,11 +41,16 @@ export default function App() {
   const [limit, setLimit] = useState(6);
   const feedRef = useRef<HTMLElement>(null);
   const aboutTrigger = useRef<HTMLElement | null>(null);
+  const viewRef = useRef(view);
 
   useEffect(() => {
     function updateView() {
-      setView(location.hash === '#saved' ? 'saved' : 'feed');
-      setQuery(''); setTopic('All topics'); setLimit(6);
+      const next = location.hash === '#saved' ? 'saved' : 'feed';
+      if (next !== viewRef.current) {
+        viewRef.current = next;
+        setView(next);
+        setQuery(''); setTopic('All topics'); setLimit(6);
+      }
       if (location.hash === '#saved') requestAnimationFrame(() => feedRef.current?.scrollIntoView({ block: 'start' }));
     }
     window.addEventListener('hashchange', updateView);
@@ -108,16 +113,15 @@ export default function App() {
 
       <main className="page-shell">
         <section className="hero" aria-labelledby="hero-title">
-          <div className="hero-copy"><h1 id="hero-title">The swamp<br />has <span>signal.</span></h1><p>Top tweets from the IdentityMD ecosystem.</p><a className="button button-primary" href="#feed" onClick={() => { if (view === 'saved') { setView('feed'); resetFilters(); } }}>Explore the feed<Icon name="arrowDown" size={17} /></a></div>
+          <div className="hero-copy"><h1 id="hero-title">The swamp<br />has <span>signal.</span></h1><p>A ranked sample of tweets about IdentityMD.</p><a className="button button-primary" href="#feed">Explore the feed<Icon name="arrowDown" size={17} /></a></div>
           <img className="hero-art" src="./art/swamp-agents.svg" alt="Two Pepe agents in tactical gear with an AI-powered circuit blaster and a friendly scout drone." width="620" height="360" fetchPriority="high" />
-          <span className="hero-caption"><span className="tiny-spark" aria-hidden="true">✳</span> Armed with AI. Fueled by the swarm.</span>
         </section>
 
         <div className="content-grid">
           <section className="feed-section" id="feed" ref={feedRef} aria-labelledby="feed-title" tabIndex={-1}>
-            <div className="section-heading"><div className="feed-title-row"><h2 id="feed-title">{view === 'saved' ? 'Saved posts' : 'From the timeline'}</h2><span className="post-count">{view === 'saved' ? savedIds.length : posts.length}</span></div><button type="button" className="snapshot-info" onClick={openAbout}><span className="snapshot-dot" aria-hidden="true" />Snapshot<Icon name="info" size={14} /></button></div>
+            <div className="section-heading"><div className="feed-title-row"><h2 id="feed-title">{view === 'saved' ? 'Saved posts' : 'Tweets'}</h2><span className="post-count">{view === 'saved' ? savedIds.length : posts.length}</span></div><button type="button" className="snapshot-info" onClick={openAbout}><span className="snapshot-dot" aria-hidden="true" />Counted {SNAPSHOT_DATE}<Icon name="info" size={14} /></button></div>
             <div className="filter-controls">
-              <div className="search-field"><label htmlFor="search-posts">Search tweets</label><div className="input-wrap"><Icon name="search" size={18} /><input id="search-posts" name="search" type="search" value={query} onChange={event => { setQuery(event.target.value); setLimit(6); }} placeholder="People, topics, or keywords…" autoComplete="off" />{query && <button type="button" className="clear-search" aria-label="Clear search" onClick={() => { setQuery(''); document.getElementById('search-posts')?.focus(); }}><Icon name="close" size={16} /></button>}</div></div>
+              <div className="search-field"><label htmlFor="search-posts">Search tweets</label><div className="input-wrap"><Icon name="search" size={18} /><input id="search-posts" name="search" type="search" value={query} onChange={event => { setQuery(event.target.value); setLimit(6); }} placeholder="Keywords" autoComplete="off" />{query && <button type="button" className="clear-search" aria-label="Clear search" onClick={() => { setQuery(''); document.getElementById('search-posts')?.focus(); }}><Icon name="close" size={16} /></button>}</div></div>
               <div className="topic-field"><label htmlFor="topic">Topic</label><select id="topic" name="topic" value={topic} onChange={event => filterTopic(event.target.value as Topic)}><option>All topics</option>{topics.map(item => <option key={item.name}>{item.name}</option>)}</select></div>
             </div>
             <div className="feed-toolbar"><div className="sort-controls" role="group" aria-label="Sort posts"><button type="button" className={sort === 'top' ? 'sort-active' : ''} aria-pressed={sort === 'top'} onClick={() => { setSort('top'); setLimit(6); }}><Icon name="flame" size={17} />Top tweets</button><button type="button" className={sort === 'latest' ? 'sort-active' : ''} aria-pressed={sort === 'latest'} onClick={() => { setSort('latest'); setLimit(6); }}><Icon name="clock" size={17} />Latest</button></div><span className="results-label" role="status" aria-live="polite">{filteredPosts.length} {filteredPosts.length === 1 ? 'post' : 'posts'}{query || topic !== 'All topics' ? ' found' : ''}</span></div>
@@ -127,12 +131,12 @@ export default function App() {
               {visiblePosts.map(post => <PostCard key={post.id} post={post} rank={ranks.get(post.id)!} saved={savedIds.includes(post.id)} onSave={toggleSave} onTopic={next => filterTopic(next, true)} />)}
               {filteredPosts.length === 0 && <div className="empty-state"><div className="empty-icon"><Icon name={view === 'saved' && !savedIds.length ? 'bookmark' : 'search'} size={28} /></div><h3>{view === 'saved' && !savedIds.length ? 'Keep the good ones.' : 'No posts found.'}</h3><p>{view === 'saved' && !savedIds.length ? 'Save a post from the feed to find it here later.' : `No matches${query.trim() ? ` for “${query.trim()}”` : ''}${topic !== 'All topics' ? ` in ${topic}` : ''}. Try another search or clear your filters.`}</p>{view === 'saved' && !savedIds.length ? <a className="button button-primary" href="#feed">Explore the feed<Icon name="arrow" size={16} /></a> : <button type="button" className="button button-primary" onClick={resetFilters}>Clear filters<Icon name="close" size={16} /></button>}</div>}
             </div>
-            {visiblePosts.length < filteredPosts.length && <button type="button" className="button load-more" onClick={() => { const previous = limit; setLimit(current => current + 6); setAnnouncement('More posts loaded.'); requestAnimationFrame(() => document.querySelector<HTMLElement>(`[data-post-id="${filteredPosts[previous]?.id}"] a`)?.focus()); }}>Load {Math.min(6, filteredPosts.length - visiblePosts.length)} more posts<Icon name="arrowDown" size={17} /></button>}
+            {visiblePosts.length < filteredPosts.length && <button type="button" className="button load-more" onClick={() => { const previous = limit; setLimit(current => current + 6); setAnnouncement('More posts loaded.'); requestAnimationFrame(() => document.querySelector<HTMLElement>(`[data-post-id="${filteredPosts[previous]?.id}"] a`)?.focus()); }}>Load {Math.min(6, filteredPosts.length - visiblePosts.length)} more {filteredPosts.length - visiblePosts.length === 1 ? 'post' : 'posts'}<Icon name="arrowDown" size={17} /></button>}
             {filteredPosts.length > 0 && <p className="feed-end">{visiblePosts.length < filteredPosts.length ? `${visiblePosts.length} of ${filteredPosts.length} posts` : 'You’re all caught up with this collection.'}<span>Counts captured {SNAPSHOT_DATE}.</span></p>}
           </section>
 
           <aside className="sidebar" aria-label="Explore the community">
-            <section className="sidebar-section topics-section" aria-labelledby="topics-title"><h2 id="topics-title">Find your corner</h2><p>Big ideas. Very green energy.</p><div className="topic-list">{topics.map(item => <button type="button" key={item.name} className={`topic-row ${topic === item.name ? 'topic-selected' : ''}`} aria-pressed={topic === item.name} onClick={() => filterTopic(item.name, true)}><span className="topic-icon"><Icon name={item.icon} size={19} /></span><span className="topic-row-text"><strong>{item.name}</strong><span>{item.description}</span></span><span className="topic-number">{posts.filter(post => post.topic === item.name).length}</span></button>)}</div></section>
+            <section className="sidebar-section topics-section" aria-labelledby="topics-title"><h2 id="topics-title">Topics</h2><div className="topic-list">{topics.map(item => <button type="button" key={item.name} className={`topic-row ${topic === item.name ? 'topic-selected' : ''}`} aria-pressed={topic === item.name} onClick={() => filterTopic(item.name, true)}><span className="topic-icon"><Icon name={item.icon} size={19} /></span><span className="topic-row-text"><strong>{item.name}</strong><span>{item.description}</span></span><span className="topic-number">{posts.filter(post => post.topic === item.name).length}</span></button>)}</div></section>
             <section className="sidebar-section people-section" aria-labelledby="people-title"><h2 id="people-title">People in the swamp</h2><div className="people-list">{people.map(person => <a className="person-row" key={person.handle} href={`https://x.com/${person.handle}`} target="_blank" rel="noreferrer"><img className="avatar" src={person.avatar} alt="" width="36" height="36" loading="lazy" /><span><strong>{person.author}</strong><span>@{person.handle}</span></span><Icon name="external" size={15} /><span className="sr-only"> on X (opens new tab)</span></a>)}</div></section>
             <section className="project-section" aria-labelledby="project-title"><div className="project-symbol" aria-hidden="true"><Icon name="chip" size={24} /><span>→</span><img src="./art/favicon.svg" alt="" width="32" height="32" /></div><h2 id="project-title">Small frogs.<br />Big intelligence.</h2><p>Meet IdentityMD, the network putting independent AI agents to work.</p><a href="https://imd.fun" target="_blank" rel="noreferrer">Explore IdentityMD<Icon name="arrow" size={17} /><span className="sr-only"> (opens new tab)</span></a></section>
             <div className="collection-note"><Icon name="info" size={16} /><p>A curated collection from {people.length} voices.<br />{totalLikes.toLocaleString('en')} likes at the snapshot.<br /><button type="button" onClick={openAbout}>How this feed works<Icon name="arrow" size={13} /></button></p></div>
@@ -140,7 +144,7 @@ export default function App() {
         </div>
       </main>
 
-      <footer className="site-footer page-shell"><span className="footer-brand"><img src="./art/favicon.svg" width="22" height="22" alt="" />A good place to be green.</span><span>Independent. Community-made.</span><button type="button" onClick={openAbout}>About this feed<Icon name="external" size={13} /></button></footer>
+      <footer className="site-footer page-shell"><span className="footer-brand"><img src="./art/favicon.svg" width="22" height="22" alt="" />the swamp</span><button type="button" onClick={openAbout}>About this feed<Icon name="external" size={13} /></button></footer>
       <div className="sr-only" role="status" aria-live="polite" aria-atomic="true">{announcement}</div>
       <AboutDialog open={aboutOpen} onClose={closeAbout} />
     </>
