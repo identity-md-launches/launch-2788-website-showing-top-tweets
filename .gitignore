@@ -1,0 +1,11 @@
+!dist/
+!dist/**
+!artifacts/
+!artifacts/**
+node_modules/
+.vite/
+.cache/
+coverage/
+test/scratch/
+*.tsbuildinfo
+npm-debug.log*

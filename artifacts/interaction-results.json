@@ -1,0 +1,134 @@
+{
+  "chromium": {
+    "engine": "chromium",
+    "results": [
+      {
+        "name": "390px first screen includes product, search, first tweet and View on X",
+        "passed": true
+      },
+      {
+        "name": "keyword search and recoverable empty state",
+        "passed": true
+      },
+      {
+        "name": "native topic filter, combined search and topic-chip filter",
+        "passed": true
+      },
+      {
+        "name": "latest sorting and top ranking",
+        "passed": true
+      },
+      {
+        "name": "bookmark save, saved route, reload persistence and removal",
+        "passed": true
+      },
+      {
+        "name": "load more appends remaining posts and moves focus to new content",
+        "passed": true
+      },
+      {
+        "name": "source links lead to real tweet permalinks and use safe new tabs",
+        "passed": true
+      },
+      {
+        "name": "about dialog, Escape, focus containment and focus return",
+        "passed": true
+      },
+      {
+        "name": "keyboard skip link and visible focus",
+        "passed": true
+      },
+      {
+        "name": "320, 390, 768, 1024 and 1440px reflow without overflow",
+        "passed": true
+      },
+      {
+        "name": "automated WCAG 2.2 AA scan of feed and dialog",
+        "passed": true
+      },
+      {
+        "name": "200% text enlargement keeps controls reachable",
+        "passed": true
+      },
+      {
+        "name": "corrupt bookmarks recover safely",
+        "passed": true
+      },
+      {
+        "name": "storage denial keeps session bookmarks usable and explains persistence",
+        "passed": true
+      },
+      {
+        "name": "zero script errors or missing production resources with external network blocked",
+        "passed": true
+      }
+    ],
+    "passed": true
+  },
+  "webkit": {
+    "engine": "webkit",
+    "results": [
+      {
+        "name": "390px first screen includes product, search, first tweet and View on X",
+        "passed": true
+      },
+      {
+        "name": "keyword search and recoverable empty state",
+        "passed": true
+      },
+      {
+        "name": "native topic filter, combined search and topic-chip filter",
+        "passed": true
+      },
+      {
+        "name": "latest sorting and top ranking",
+        "passed": true
+      },
+      {
+        "name": "bookmark save, saved route, reload persistence and removal",
+        "passed": true
+      },
+      {
+        "name": "load more appends remaining posts and moves focus to new content",
+        "passed": true
+      },
+      {
+        "name": "source links lead to real tweet permalinks and use safe new tabs",
+        "passed": true
+      },
+      {
+        "name": "about dialog, Escape, focus containment and focus return",
+        "passed": true
+      },
+      {
+        "name": "keyboard skip link and visible focus",
+        "passed": true
+      },
+      {
+        "name": "320, 390, 768, 1024 and 1440px reflow without overflow",
+        "passed": true
+      },
+      {
+        "name": "automated WCAG 2.2 AA scan of feed and dialog",
+        "passed": true
+      },
+      {
+        "name": "200% text enlargement keeps controls reachable",
+        "passed": true
+      },
+      {
+        "name": "corrupt bookmarks recover safely",
+        "passed": true
+      },
+      {
+        "name": "storage denial keeps session bookmarks usable and explains persistence",
+        "passed": true
+      },
+      {
+        "name": "zero script errors or missing production resources with external network blocked",
+        "passed": true
+      }
+    ],
+    "passed": true
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "limitBytes": 8388608,
+  "pathBudgetsBytes": {
+    ".gitignore": 512,
+    "src/": 200000,
+    "public/": 1800000,
+    "dist/": 2400000,
+    "scripts/": 100000,
+    "artifacts/": 1400000,
+    "package.json": 4000,
+    "package-lock.json": 160000,
+    "tsconfig.json": 4000,
+    "vite.config.ts": 4000,
+    "index.html": 6000,
+    "README.md": 20000,
+    "DESIGN.md": 30000,
+    "THIRD_PARTY_NOTICES.md": 20000
+  },
+  "excludedAtEveryDepth": ["node_modules/", ".vite/", ".cache/", "coverage/"],
+  "scratchExcluded": "test/scratch/",
+  "note": "Explicit budget authorizing the new .gitignore; dist is intentionally included. Final byte measurements are recorded in artifacts/validation.md."
+}

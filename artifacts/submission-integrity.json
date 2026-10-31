@@ -1,0 +1,370 @@
+{
+  "verifiedAt": "2026-10-31T17:46:56.413440+00:00",
+  "limitBytes": 8388608,
+  "deliveryBytes": 1537517,
+  "deliveredFileCount": 55,
+  "sourceAndCheckInputsMatchedTestedCopy": true,
+  "productionExportByteIdenticalToTestedCopy": true,
+  "exportFiles": 12,
+  "exportBytes": 513684,
+  "noDependencyOrCacheDirectories": true,
+  "selfHashExcluded": true,
+  "pathBudgets": [
+    {
+      "path": ".gitignore",
+      "bytes": 124,
+      "budgetBytes": 512,
+      "passed": true
+    },
+    {
+      "path": "src/",
+      "bytes": 60627,
+      "budgetBytes": 200000,
+      "passed": true
+    },
+    {
+      "path": "public/",
+      "bytes": 242138,
+      "budgetBytes": 1800000,
+      "passed": true
+    },
+    {
+      "path": "dist/",
+      "bytes": 513684,
+      "budgetBytes": 2400000,
+      "passed": true
+    },
+    {
+      "path": "scripts/",
+      "bytes": 19188,
+      "budgetBytes": 100000,
+      "passed": true
+    },
+    {
+      "path": "artifacts/",
+      "bytes": 616478,
+      "budgetBytes": 1400000,
+      "passed": true
+    },
+    {
+      "path": "package.json",
+      "bytes": 707,
+      "budgetBytes": 4000,
+      "passed": true
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 63644,
+      "budgetBytes": 160000,
+      "passed": true
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 484,
+      "budgetBytes": 4000,
+      "passed": true
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 203,
+      "budgetBytes": 4000,
+      "passed": true
+    },
+    {
+      "path": "index.html",
+      "bytes": 1889,
+      "budgetBytes": 6000,
+      "passed": true
+    },
+    {
+      "path": "README.md",
+      "bytes": 4726,
+      "budgetBytes": 20000,
+      "passed": true
+    },
+    {
+      "path": "DESIGN.md",
+      "bytes": 10891,
+      "budgetBytes": 30000,
+      "passed": true
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 2734,
+      "budgetBytes": 20000,
+      "passed": true
+    }
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 124,
+      "sha256": "e9b00fc86905de99736c6a47cec822b3b95bc0ea178a682090daad008bd5edda"
+    },
+    {
+      "path": "DESIGN.md",
+      "bytes": 10891,
+      "sha256": "dd6976cf76a11cb800b2d3f6c63bc6220bfc97f7edab9900487b27bf03e67d09"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4726,
+      "sha256": "17bad3074e31788d7aa84feefef06b960e2c795204317535fe76e0d1970007a8"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 2734,
+      "sha256": "fd1101763811af42b3bbca7eb319fb6cdc9b39322254b2e83be4a821ae4625c1"
+    },
+    {
+      "path": "artifacts/accessibility-results.json",
+      "bytes": 2915,
+      "sha256": "46adddc97d4aa181b540e1661602e8f917e520ccb2213640aa0ff97cc8bec8f5"
+    },
+    {
+      "path": "artifacts/contrast.json",
+      "bytes": 959,
+      "sha256": "37411232b0c3d69b5383f16c46654178b8f1c83b1fc2c5454f5e0efaa0928a96"
+    },
+    {
+      "path": "artifacts/design-guidance-licenses.txt",
+      "bytes": 11964,
+      "sha256": "97042f2887a04fc6c26967568cee2a17b3229d0f7e5e3c0b0ac877bef6932c39"
+    },
+    {
+      "path": "artifacts/interaction-results.json",
+      "bytes": 3587,
+      "sha256": "4e1f097823658e98d8cfbbbe226934e75a3bf331a623ea75ead264c578828d36"
+    },
+    {
+      "path": "artifacts/screenshots/about-390.png",
+      "bytes": 50252,
+      "sha256": "3bcd4776ef9c24d0a3f908d2381905cfae88551e47cc607699206e5db6c6ebab"
+    },
+    {
+      "path": "artifacts/screenshots/desktop-1440.png",
+      "bytes": 250243,
+      "sha256": "bc64fd583d5fd9b35681561d99a8dc0eb234bb1d2108d666c3122dafc8309aac"
+    },
+    {
+      "path": "artifacts/screenshots/keyboard-focus-390.png",
+      "bytes": 66554,
+      "sha256": "59e61ebbd7c9c2a6f93ba8af29c4a9c4abb570b2b0b27aecb888176d739ee462"
+    },
+    {
+      "path": "artifacts/screenshots/mobile-390.png",
+      "bytes": 94574,
+      "sha256": "6a09739bca93872118d837d2490bcd40f0acd16f8f99af53e471b417c51e1c1c"
+    },
+    {
+      "path": "artifacts/screenshots/webkit-mobile-390.png",
+      "bytes": 100061,
+      "sha256": "0c98152c7f3187befeef83fe2ed1af5bed035575ef8558c09ee7553543c38d74"
+    },
+    {
+      "path": "artifacts/sources.md",
+      "bytes": 3928,
+      "sha256": "460b6e8a8eae7893d436774d77812150976ca2c853af5146598d7e45db25cceb"
+    },
+    {
+      "path": "artifacts/submission-budget.json",
+      "bytes": 694,
+      "sha256": "996d611c20db19bfc700248209c18b2aaf684aed5008be79fefc4dec10259af7"
+    },
+    {
+      "path": "artifacts/taste-results.json",
+      "bytes": 3881,
+      "sha256": "49aa9706879dc2156d0c6d27b451383e3e1c06b8fc4b21267fc6e638e4ad38b3"
+    },
+    {
+      "path": "artifacts/validation.md",
+      "bytes": 16299,
+      "sha256": "d7250a2625a8f0769a118cf31e139c15d606d6cf19a491bf214bd0990486be80"
+    },
+    {
+      "path": "dist/art/favicon.svg",
+      "bytes": 743,
+      "sha256": "51887137e09ec0f1c3080808a18e0f8ddbc006c58eace86588282653b459d98a"
+    },
+    {
+      "path": "dist/art/social.png",
+      "bytes": 148722,
+      "sha256": "12b3f471a279154e55b1592db1937a4f92704236dae0c560e1ca02d382e2d80f"
+    },
+    {
+      "path": "dist/art/swamp-agents.svg",
+      "bytes": 7212,
+      "sha256": "fcf1bba51e3d4281a817f6aaaef84510bb37e9d15f0cc9467d2156d0cc404897"
+    },
+    {
+      "path": "dist/assets/index-C44C_Q2F.js",
+      "bytes": 247580,
+      "sha256": "62c1ab02111146189fb9dd16cec8c8020af026195d7d8ff490dc0fd90872cc86"
+    },
+    {
+      "path": "dist/assets/index-uhCgMEII.css",
+      "bytes": 21978,
+      "sha256": "a6d21a529d2c9548b98339fdedd7d10be8bf78df572f2a0fd62a8c85432345a0"
+    },
+    {
+      "path": "dist/avatars/damian_et.jpg",
+      "bytes": 7084,
+      "sha256": "44f09bd864d4d40980a16558a331b94e802622a0bfa903cfbee356670d67be76"
+    },
+    {
+      "path": "dist/avatars/imdradar.jpg",
+      "bytes": 15005,
+      "sha256": "999f5814cd1bf2e8d0a9eac882cd0c7cf3175bdd8bba670484aaad8c3ac2cd98"
+    },
+    {
+      "path": "dist/avatars/surfcoderepeat.jpg",
+      "bytes": 11346,
+      "sha256": "5ce477c4d784eac7babdffaa4f3cfca8b7bd06aaf78a5cea99961bc4653a9687"
+    },
+    {
+      "path": "dist/avatars/taylor_.jpg",
+      "bytes": 23107,
+      "sha256": "aa27c7975789f1064bc0b4f8be2d6a310b630ef14f6a4333f00a5614e259dd70"
+    },
+    {
+      "path": "dist/fonts/OFL.txt",
+      "bytes": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "path": "dist/fonts/manrope-latin.woff2",
+      "bytes": 24532,
+      "sha256": "8c2def024c1bf31aacf3624ae3c4d701269b4ec3dc765c04830839f0d36b2d9e"
+    },
+    {
+      "path": "dist/index.html",
+      "bytes": 1988,
+      "sha256": "1b0801a9c007894d911ed1a1ce7dcf1d22c5ee300a358db22a080f3582b050c3"
+    },
+    {
+      "path": "index.html",
+      "bytes": 1889,
+      "sha256": "27557319908e960263487933470074d6f6993266ed575abf1618355887013726"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 63644,
+      "sha256": "fcf954580c8fc7b82109ecad878546eb52baea0d7354b0a1ea20669a2c06ec4f"
+    },
+    {
+      "path": "package.json",
+      "bytes": 707,
+      "sha256": "65cf196ce32e6f772129b1a711cb628c0731b9d80b643d7de05014caca4faa37"
+    },
+    {
+      "path": "public/art/favicon.svg",
+      "bytes": 743,
+      "sha256": "51887137e09ec0f1c3080808a18e0f8ddbc006c58eace86588282653b459d98a"
+    },
+    {
+      "path": "public/art/social.png",
+      "bytes": 148722,
+      "sha256": "12b3f471a279154e55b1592db1937a4f92704236dae0c560e1ca02d382e2d80f"
+    },
+    {
+      "path": "public/art/swamp-agents.svg",
+      "bytes": 7212,
+      "sha256": "fcf1bba51e3d4281a817f6aaaef84510bb37e9d15f0cc9467d2156d0cc404897"
+    },
+    {
+      "path": "public/avatars/damian_et.jpg",
+      "bytes": 7084,
+      "sha256": "44f09bd864d4d40980a16558a331b94e802622a0bfa903cfbee356670d67be76"
+    },
+    {
+      "path": "public/avatars/imdradar.jpg",
+      "bytes": 15005,
+      "sha256": "999f5814cd1bf2e8d0a9eac882cd0c7cf3175bdd8bba670484aaad8c3ac2cd98"
+    },
+    {
+      "path": "public/avatars/surfcoderepeat.jpg",
+      "bytes": 11346,
+      "sha256": "5ce477c4d784eac7babdffaa4f3cfca8b7bd06aaf78a5cea99961bc4653a9687"
+    },
+    {
+      "path": "public/avatars/taylor_.jpg",
+      "bytes": 23107,
+      "sha256": "aa27c7975789f1064bc0b4f8be2d6a310b630ef14f6a4333f00a5614e259dd70"
+    },
+    {
+      "path": "public/fonts/OFL.txt",
+      "bytes": 4387,
+      "sha256": "58172e0c0fac2cda8a37b348164bb55e44b0e69051e557e92b1d3f6910141f7b"
+    },
+    {
+      "path": "public/fonts/manrope-latin.woff2",
+      "bytes": 24532,
+      "sha256": "8c2def024c1bf31aacf3624ae3c4d701269b4ec3dc765c04830839f0d36b2d9e"
+    },
+    {
+      "path": "scripts/check-export.mjs",
+      "bytes": 2262,
+      "sha256": "67e3a43bd577bea669c0d1added4c83606133fd9403b7876ca23093d78c8d3fe"
+    },
+    {
+      "path": "scripts/check-interactions.mjs",
+      "bytes": 16926,
+      "sha256": "89594afc2cfff2394c7e8515b8c1c004bd1241a794fec08409664a0757bda264"
+    },
+    {
+      "path": "src/App.tsx",
+      "bytes": 14205,
+      "sha256": "6ca51a58360bcc1902e2cc35a64cc1c93c290f4a3ea9102cfdd6300fca046b38"
+    },
+    {
+      "path": "src/artwork/social.svg",
+      "bytes": 8962,
+      "sha256": "ed6e0047f27ca8597f99563e32f3148514bdc7d7eea29bf2276f9a713573337e"
+    },
+    {
+      "path": "src/components/AboutDialog.tsx",
+      "bytes": 2841,
+      "sha256": "d881d1fa5b17e7f3b90a3a61a85366f77666fa1b991d7610803fca98ff431cbe"
+    },
+    {
+      "path": "src/components/Icon.tsx",
+      "bytes": 2354,
+      "sha256": "0f601cf05b36b09c1be8dbc44fc449e3f6b55656f296de8a724bd9e8e32f9863"
+    },
+    {
+      "path": "src/components/PostCard.tsx",
+      "bytes": 2938,
+      "sha256": "a626194504419e4e7f6e79e6ff29e06febb91b9337362e9de7e9c2c8f58f8eb0"
+    },
+    {
+      "path": "src/main.tsx",
+      "bytes": 230,
+      "sha256": "a920ec27028d3f1997c93d79da61fa77c0ff613085a6fb2a8ea2dea92cab28a9"
+    },
+    {
+      "path": "src/posts.ts",
+      "bytes": 6367,
+      "sha256": "8e73b4fcb69380e43d27bc303feb103494dff4e0d381e56ab6924aae1306a9de"
+    },
+    {
+      "path": "src/styles.css",
+      "bytes": 22380,
+      "sha256": "c524d191b2e49b3e625ea440c00c6c576027774d89af3727a2e556155afa357a"
+    },
+    {
+      "path": "src/types.ts",
+      "bytes": 350,
+      "sha256": "a7369384fa4a5962cfcb06936c093a5f570498869f49d7bc708cb18d909bcadb"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 484,
+      "sha256": "ddf8f820e8b8756db265ca9e565854b6b4afe7ef63bc881692ca7271c6f3a930"
+    },
+    {
+      "path": "vite.config.ts",
+      "bytes": 203,
+      "sha256": "1d9d6679b7c1603bca31167851feaf8155f9963eecaf41a49c09e926969469e4"
+    }
+  ]
+}
